@@ -8,11 +8,11 @@
 交流群：（Q群）795429103（不是我的群，而是另一个B站UP主：熔岩泡芙的群）\
 我的QQ：1144048886
 ## 当前教程包含内容
-Chapter 1：片段
-Chapter 2：链接
-Chapter 3：多媒体内容
-Chapter 4：变量
-Chapter 5：链接宏和do宏
-Chapter 6：条件宏
-Chapter 7：循环宏
+Chapter 1：片段\
+Chapter 2：链接\
+Chapter 3：多媒体内容\
+Chapter 4：变量\
+Chapter 5：链接宏和do宏\
+Chapter 6：条件宏\
+Chapter 7：循环宏\
 Chapter 8：捕获宏
