@@ -1,190 +1,281 @@
-[2m2025-08-01T16:08:02.714522Z[0m [34mDEBUG[0m Starting build command
-[2m2025-08-01T16:08:02.714681Z[0m [34mDEBUG[0m Sources: ["幻梦酱的新手教程.twee"]
-[2m2025-08-01T16:08:02.714713Z[0m [34mDEBUG[0m Output: "index.html"
-[2m2025-08-01T16:08:02.714723Z[0m [34mDEBUG[0m Watch mode: false
-[2m2025-08-01T16:08:02.714734Z[0m [34mDEBUG[0m Base64 mode: false
-[2m2025-08-01T16:08:02.714743Z[0m [34mDEBUG[0m Start passage: None
-[2m2025-08-01T16:08:02.714758Z[0m [34mDEBUG[0m Starting pipeline-based build process...
-[2m2025-08-01T16:08:02.714882Z[0m [34mDEBUG[0m Scripts directory does not exist: "D:\\tweers-windows-x86_64\\scripts"
-[2m2025-08-01T16:08:02.714902Z[0m [34mDEBUG[0m Adding first node 'FileCollector' to pipeline 'TweersBuildPipeline'. Inputs: ["sources", "base64?"] (will be provided externally)
-[2m2025-08-01T16:08:02.714919Z[0m [34mDEBUG[0m Adding node 'FileChangeDetector' to pipeline 'TweersBuildPipeline'. Inputs: ["files", "context"], Available sources: ["files", "sources", "base64", "context", "output_path", "is_rebuild"]
-[2m2025-08-01T16:08:02.714932Z[0m [34mDEBUG[0m Adding node 'FileParser' to pipeline 'TweersBuildPipeline'. Inputs: ["modified_files", "context"], Available sources: ["files", "modified_files", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
-[2m2025-08-01T16:08:02.714947Z[0m [34mDEBUG[0m Adding node 'DataAggregator' to pipeline 'TweersBuildPipeline'. Inputs: ["files", "context", "parsed_data?"], Available sources: ["files", "modified_files", "context", "parsed_data", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
-[2m2025-08-01T16:08:02.714960Z[0m [34mDEBUG[0m Adding node 'HtmlGenerator' to pipeline 'TweersBuildPipeline'. Inputs: ["all_passages", "story_data", "context"], Available sources: ["files", "modified_files", "context", "parsed_data", "context", "all_passages", "story_data", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
-[2m2025-08-01T16:08:02.714973Z[0m [34mDEBUG[0m Adding node 'FileWriter' to pipeline 'TweersBuildPipeline'. Inputs: ["html_content", "output_path"], Available sources: ["files", "modified_files", "context", "parsed_data", "context", "all_passages", "story_data", "context", "html_content", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
-[2m2025-08-01T16:08:02.714996Z[0m [34mDEBUG[0m Executing pipeline 'TweersBuildPipeline' with 6 nodes
-[2m2025-08-01T16:08:02.715005Z[0m [34mDEBUG[0m Processing node 1: 'FileCollector'
-[2m2025-08-01T16:08:02.715021Z[0m [34mDEBUG[0m Collecting files from 1 sources, base64: false
-[2m2025-08-01T16:08:02.715195Z[0m [32m INFO[0m Starting file collection, path count: 1
-[2m2025-08-01T16:08:02.715208Z[0m [34mDEBUG[0m Processing path: "幻梦酱的新手教程.twee"
-[2m2025-08-01T16:08:02.715577Z[0m [34mDEBUG[0m Checking file: "幻梦酱的新手教程.twee", base64_enabled: false
-[2m2025-08-01T16:08:02.715610Z[0m [34mDEBUG[0m File is a regular support file: "幻梦酱的新手教程.twee"
-[2m2025-08-01T16:08:02.715627Z[0m [34mDEBUG[0m Found support file: "幻梦酱的新手教程.twee"
-[2m2025-08-01T16:08:02.715767Z[0m [32m INFO[0m File collection completed, found 1 support files
-[2m2025-08-01T16:08:02.715800Z[0m [34mDEBUG[0m Found 1 support files
-[2m2025-08-01T16:08:02.715820Z[0m [34mDEBUG[0m Node 'FileCollector' processed successfully
-[2m2025-08-01T16:08:02.715832Z[0m [34mDEBUG[0m Processing node 2: 'FileChangeDetector'
-[2m2025-08-01T16:08:02.716000Z[0m [34mDEBUG[0m File modified: "幻梦酱的新手教程.twee"
-[2m2025-08-01T16:08:02.716022Z[0m [34mDEBUG[0m Found 1 modified files
-[2m2025-08-01T16:08:02.716035Z[0m [34mDEBUG[0m Node 'FileChangeDetector' processed successfully
-[2m2025-08-01T16:08:02.716046Z[0m [34mDEBUG[0m Processing node 3: 'FileParser'
-[2m2025-08-01T16:08:02.716188Z[0m [32m INFO[0m Parsing file: "幻梦酱的新手教程.twee"
-[2m2025-08-01T16:08:02.716482Z[0m [34mDEBUG[0m Starting to parse content with 107 lines
-[2m2025-08-01T16:08:02.716540Z[0m [34mDEBUG[0m Processing line 1: ":: StoryTitle"
-[2m2025-08-01T16:08:02.716557Z[0m [34mDEBUG[0m Parsing header: "StoryTitle"
-[2m2025-08-01T16:08:02.716572Z[0m [34mDEBUG[0m Parsed metadata: ("StoryTitle", None, None, None)
-[2m2025-08-01T16:08:02.716586Z[0m [34mDEBUG[0m Processing line 2: "幻梦酱的新手教程"
-[2m2025-08-01T16:08:02.716597Z[0m [34mDEBUG[0m Processing line 3: ""
-[2m2025-08-01T16:08:02.716606Z[0m [34mDEBUG[0m Processing line 4: ""
-[2m2025-08-01T16:08:02.716615Z[0m [34mDEBUG[0m Processing line 5: ":: StoryData"
-[2m2025-08-01T16:08:02.716626Z[0m [34mDEBUG[0m Saving passage 'StoryTitle' with content length: 24
-[2m2025-08-01T16:08:02.716639Z[0m [34mDEBUG[0m Parsing header: "StoryData"
-[2m2025-08-01T16:08:02.716648Z[0m [34mDEBUG[0m Parsed metadata: ("StoryData", None, None, None)
-[2m2025-08-01T16:08:02.716657Z[0m [34mDEBUG[0m Processing line 6: "{"
-[2m2025-08-01T16:08:02.716666Z[0m [34mDEBUG[0m Processing line 7: "  \"ifid\": \"01155382-7ADE-430A-A9E6-57E047E37F27\","
-[2m2025-08-01T16:08:02.716675Z[0m [34mDEBUG[0m Processing line 8: "  \"format\": \"SugarCube\","
-[2m2025-08-01T16:08:02.716683Z[0m [34mDEBUG[0m Processing line 9: "  \"format-version\": \"2.37.3\","
-[2m2025-08-01T16:08:02.716692Z[0m [34mDEBUG[0m Processing line 10: "  \"start\": \"Start\","
-[2m2025-08-01T16:08:02.716701Z[0m [34mDEBUG[0m Processing line 11: "  \"zoom\": 1"
-[2m2025-08-01T16:08:02.716709Z[0m [34mDEBUG[0m Processing line 12: "}"
-[2m2025-08-01T16:08:02.716718Z[0m [34mDEBUG[0m Processing line 13: ""
-[2m2025-08-01T16:08:02.716726Z[0m [34mDEBUG[0m Processing line 14: ""
-[2m2025-08-01T16:08:02.716735Z[0m [34mDEBUG[0m Processing line 15: ":: StoryCaption"
-[2m2025-08-01T16:08:02.716745Z[0m [34mDEBUG[0m Saving passage 'StoryData' with content length: 140
-[2m2025-08-01T16:08:02.716753Z[0m [34mDEBUG[0m Processing StoryData with content: "{\n  \"ifid\": \"01155382-7ADE-430A-A9E6-57E047E37F27\",\n  \"format\": \"SugarCube\",\n  \"format-version\": \"2.37.3\",\n  \"start\": \"Start\",\n  \"zoom\": 1\n}"
-[2m2025-08-01T16:08:02.716782Z[0m [34mDEBUG[0m Parsing header: "StoryCaption"
-[2m2025-08-01T16:08:02.716791Z[0m [34mDEBUG[0m Parsed metadata: ("StoryCaption", None, None, None)
-[2m2025-08-01T16:08:02.716800Z[0m [34mDEBUG[0m Processing line 16: "[[打开目录|Catalog]]"
-[2m2025-08-01T16:08:02.716810Z[0m [34mDEBUG[0m Processing line 17: ""
-[2m2025-08-01T16:08:02.716818Z[0m [34mDEBUG[0m Processing line 18: ""
-[2m2025-08-01T16:08:02.716827Z[0m [34mDEBUG[0m Processing line 19: ":: Catalog"
-[2m2025-08-01T16:08:02.716835Z[0m [34mDEBUG[0m Saving passage 'StoryCaption' with content length: 24
-[2m2025-08-01T16:08:02.716844Z[0m [34mDEBUG[0m Parsing header: "Catalog"
-[2m2025-08-01T16:08:02.716853Z[0m [34mDEBUG[0m Parsed metadata: ("Catalog", None, None, None)
-[2m2025-08-01T16:08:02.716862Z[0m [34mDEBUG[0m Processing line 20: "- [[开始|Start]]"
-[2m2025-08-01T16:08:02.716871Z[0m [34mDEBUG[0m Processing line 21: "- [[第一章：片段|Chapter1]]"
-[2m2025-08-01T16:08:02.716881Z[0m [34mDEBUG[0m Processing line 22: "- [[第二章：链接|Chapter2]]"
-[2m2025-08-01T16:08:02.716891Z[0m [34mDEBUG[0m Processing line 23: "- [[第三章：多媒体内容|Chapter3]]"
-[2m2025-08-01T16:08:02.716902Z[0m [34mDEBUG[0m Processing line 24: "- [[第四章：变量|Chapter4]]"
-[2m2025-08-01T16:08:02.716921Z[0m [34mDEBUG[0m Processing line 25: ""
-[2m2025-08-01T16:08:02.716930Z[0m [34mDEBUG[0m Processing line 26: ""
-[2m2025-08-01T16:08:02.716939Z[0m [34mDEBUG[0m Processing line 27: ":: Start {\"position\":\"400,300\",\"size\":\"100,100\"}"
-[2m2025-08-01T16:08:02.716948Z[0m [34mDEBUG[0m Saving passage 'Catalog' with content length: 163
-[2m2025-08-01T16:08:02.716961Z[0m [34mDEBUG[0m Parsing header: "Start {\"position\":\"400,300\",\"size\":\"100,100\"}"
-[2m2025-08-01T16:08:02.716974Z[0m [34mDEBUG[0m Parsed metadata: ("Start", None, Some("400,300"), Some("100,100"))
-[2m2025-08-01T16:08:02.716984Z[0m [34mDEBUG[0m Processing line 28: "恭喜你，当你看到这一行文字，意味着你的电脑浏览器可以正常使用，拥有了调试的环境，正所谓好的开始是成功的一半，这说明了你已经取得了一半的胜利。"
-[2m2025-08-01T16:08:02.717011Z[0m [34mDEBUG[0m Processing line 29: ""
-[2m2025-08-01T16:08:02.717021Z[0m [34mDEBUG[0m Processing line 30: "但是，不要骄傲，接下来还有很多东西需要你去学习。"
-[2m2025-08-01T16:08:02.717035Z[0m [34mDEBUG[0m Processing line 31: ""
-[2m2025-08-01T16:08:02.717043Z[0m [34mDEBUG[0m Processing line 32: "首先，你需要确定你已经安装了最新版本的Twine软件，并且已经安装了SugarCube格式的故事格式。"
-[2m2025-08-01T16:08:02.717061Z[0m [34mDEBUG[0m Processing line 33: ""
-[2m2025-08-01T16:08:02.717069Z[0m [34mDEBUG[0m Processing line 34: "如果你还没有安装Twine软件，可以访问<a href=\"https://twinery.org/\" target=\"_blank\">Twine官网</a>下载最新版本。"
-[2m2025-08-01T16:08:02.717084Z[0m [34mDEBUG[0m Processing line 35: "如果你不确定使用的是否为SugarCube格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“SugarCube 2.37.3”，并点击“设为默认故事格式”。"
-[2m2025-08-01T16:08:02.717105Z[0m [34mDEBUG[0m Processing line 36: ""
-[2m2025-08-01T16:08:02.717113Z[0m [34mDEBUG[0m Processing line 37: "在确认上述步骤已经完成后，你可以点击下面的链接，进入第一章内容的学习。"
-[2m2025-08-01T16:08:02.717130Z[0m [34mDEBUG[0m Processing line 38: ""
-[2m2025-08-01T16:08:02.717138Z[0m [34mDEBUG[0m Processing line 39: "[[下一章|Chapter1]]"
-[2m2025-08-01T16:08:02.717148Z[0m [34mDEBUG[0m Processing line 40: ""
-[2m2025-08-01T16:08:02.717156Z[0m [34mDEBUG[0m Processing line 41: ""
-[2m2025-08-01T16:08:02.717164Z[0m [34mDEBUG[0m Processing line 42: ":: Chapter1"
-[2m2025-08-01T16:08:02.717174Z[0m [34mDEBUG[0m Saving passage 'Start' with content length: 873
-[2m2025-08-01T16:08:02.717183Z[0m [34mDEBUG[0m Parsing header: "Chapter1"
-[2m2025-08-01T16:08:02.717192Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter1", None, None, None)
-[2m2025-08-01T16:08:02.717201Z[0m [34mDEBUG[0m Processing line 43: "Twine的基础是片段和链接，片段是Twine故事的基本构建块，而链接则是连接不同片段的桥梁。"
-[2m2025-08-01T16:08:02.717218Z[0m [34mDEBUG[0m Processing line 44: "在Twine中，片段是一个独立的文本块，它可以包含任何内容，包括文本、图片、音频等。"
-[2m2025-08-01T16:08:02.717235Z[0m [34mDEBUG[0m Processing line 45: ""
-[2m2025-08-01T16:08:02.717244Z[0m [34mDEBUG[0m Processing line 46: "每个片段都有一个唯一的标题，用于标识和引用该片段。"
-[2m2025-08-01T16:08:02.717258Z[0m [34mDEBUG[0m Processing line 47: "片段的标题可以是任何文本，但通常建议使用简短且具有描述性的标题，以便于在故事中进行引用和链接。"
-[2m2025-08-01T16:08:02.717277Z[0m [34mDEBUG[0m Processing line 48: ""
-[2m2025-08-01T16:08:02.717286Z[0m [34mDEBUG[0m Processing line 49: "片段的内容可以是纯文本，也可以包含HTML、CSS和JavaScript等代码。"
-[2m2025-08-01T16:08:02.717300Z[0m [34mDEBUG[0m Processing line 50: "现在你看到的内容就是一个片段的内容，它的标题是“Chapter1”，你可以在Twine中创建更多的片段来丰富你的故事。"
-[2m2025-08-01T16:08:02.717319Z[0m [34mDEBUG[0m Processing line 51: ""
-[2m2025-08-01T16:08:02.717327Z[0m [34mDEBUG[0m Processing line 52: "[[下一章|Chapter2]]"
-[2m2025-08-01T16:08:02.717337Z[0m [34mDEBUG[0m Processing line 53: ""
-[2m2025-08-01T16:08:02.717345Z[0m [34mDEBUG[0m Processing line 54: ""
-[2m2025-08-01T16:08:02.717353Z[0m [34mDEBUG[0m Processing line 55: ":: Chapter2"
-[2m2025-08-01T16:08:02.717363Z[0m [34mDEBUG[0m Saving passage 'Chapter1' with content length: 721
-[2m2025-08-01T16:08:02.717372Z[0m [34mDEBUG[0m Parsing header: "Chapter2"
-[2m2025-08-01T16:08:02.717382Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter2", None, None, None)
-[2m2025-08-01T16:08:02.717391Z[0m [34mDEBUG[0m Processing line 56: "恭喜你，刚刚成功的点击了Twine的链接，在Twine中，链接是非常重要的一个概念，它可以让你在不同的片段之间进行跳转。"
-[2m2025-08-01T16:08:02.717412Z[0m [34mDEBUG[0m Processing line 57: "在Twine中，链接的语法非常简单，只需要使用双括号包裹住链接的文本即可。"
-[2m2025-08-01T16:08:02.717428Z[0m [34mDEBUG[0m Processing line 58: ""
-[2m2025-08-01T16:08:02.717436Z[0m [34mDEBUG[0m Processing line 59: "例如，[[新页面]]表示点击“新页面”这个链接后，会跳转到名为“新页面”的章节。它的写法是：{{{[[新页面]]}}}"
-[2m2025-08-01T16:08:02.717455Z[0m [34mDEBUG[0m Processing line 60: "在Twine中，直接使用双括号包裹住片段标题是最简单的创建连接的方式，但这样做也有一个缺点，那就是显示的链接文本是片段标题本身，这可能不是你想要的效果。"
-[2m2025-08-01T16:08:02.717480Z[0m [34mDEBUG[0m Processing line 61: ""
-[2m2025-08-01T16:08:02.717489Z[0m [34mDEBUG[0m Processing line 62: "为了更好地控制链接的显示文本，你可以使用以下语法：{{{[[链接文本|片段标题]]}}}"
-[2m2025-08-01T16:08:02.717505Z[0m [34mDEBUG[0m Processing line 63: "这样，你可以将“链接文本”替换为你想要显示的文本，而“片段标题”则是你想要跳转到的章节标题。"
-[2m2025-08-01T16:08:02.717524Z[0m [34mDEBUG[0m Processing line 64: "例如[[跳转到新页面|新页面]]，表示点击“跳转到新页面”这个链接后，会跳转到名为“新页面”的章节。"
-[2m2025-08-01T16:08:02.717543Z[0m [34mDEBUG[0m Processing line 65: ""
-[2m2025-08-01T16:08:02.717552Z[0m [34mDEBUG[0m Processing line 66: "链接的片段可以是你故事中任意片段，包括所在的这个片段本身，如果链接跳转的片段不存在，Twine会自动创建一个新的片段。"
-[2m2025-08-01T16:08:02.717573Z[0m [34mDEBUG[0m Processing line 67: ""
-[2m2025-08-01T16:08:02.717581Z[0m [34mDEBUG[0m Processing line 68: "在Twine中，链接是一个十分重要的功能，任何一个片段如果没有链接指向它，它就无法被访问到。"
-[2m2025-08-01T16:08:02.717600Z[0m [34mDEBUG[0m Processing line 69: ""
-[2m2025-08-01T16:08:02.717608Z[0m [34mDEBUG[0m Processing line 70: "[[下一章|Chapter3]]"
-[2m2025-08-01T16:08:02.717617Z[0m [34mDEBUG[0m Processing line 71: ""
-[2m2025-08-01T16:08:02.717626Z[0m [34mDEBUG[0m Processing line 72: ""
-[2m2025-08-01T16:08:02.717635Z[0m [34mDEBUG[0m Processing line 73: ":: Chapter3"
-[2m2025-08-01T16:08:02.717645Z[0m [34mDEBUG[0m Saving passage 'Chapter2' with content length: 1347
-[2m2025-08-01T16:08:02.717654Z[0m [34mDEBUG[0m Parsing header: "Chapter3"
-[2m2025-08-01T16:08:02.717663Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter3", None, None, None)
-[2m2025-08-01T16:08:02.717671Z[0m [34mDEBUG[0m Processing line 74: "除了文字外，Twine还支持在片段中插入图片、音频等多媒体内容。"
-[2m2025-08-01T16:08:02.717686Z[0m [34mDEBUG[0m Processing line 75: ""
-[2m2025-08-01T16:08:02.717695Z[0m [34mDEBUG[0m Processing line 76: "你可以使用HTML标签来插入这些内容，例如使用{{{<img>}}}标签来插入图片，使用{{{<audio>}}}标签来插入音频。"
-[2m2025-08-01T16:08:02.717712Z[0m [34mDEBUG[0m Processing line 77: "你也可以使用Twine的内置宏来实现相同的功能，例如{{{<<audio>>}}}来插入音频文件。"
-[2m2025-08-01T16:08:02.717728Z[0m [34mDEBUG[0m Processing line 78: "Twine没有图像宏，但有更加简便的插入图像方式：{{{[img[image.jpg]]}}}，其中image.jpg是你想要插入的图片文件名。"
-[2m2025-08-01T16:08:02.717745Z[0m [34mDEBUG[0m Processing line 79: "如果你希望插入的图片在点击时可以跳转到其他片段，可以使用{{{[img[image.jpg|链接文本]]}}}的方式。"
-[2m2025-08-01T16:08:02.717789Z[0m [34mDEBUG[0m Processing line 80: "例如，{{{[img[image.jpg][新页面]]}}}"
-[2m2025-08-01T16:08:02.717802Z[0m [34mDEBUG[0m Processing line 81: ""
-[2m2025-08-01T16:08:02.717811Z[0m [34mDEBUG[0m Processing line 82: "[[下一章|Chapter4]]"
-[2m2025-08-01T16:08:02.717820Z[0m [34mDEBUG[0m Processing line 83: ""
-[2m2025-08-01T16:08:02.717829Z[0m [34mDEBUG[0m Processing line 84: ""
-[2m2025-08-01T16:08:02.717837Z[0m [34mDEBUG[0m Processing line 85: ":: Chapter4"
-[2m2025-08-01T16:08:02.717847Z[0m [34mDEBUG[0m Saving passage 'Chapter3' with content length: 679
-[2m2025-08-01T16:08:02.717857Z[0m [34mDEBUG[0m Parsing header: "Chapter4"
-[2m2025-08-01T16:08:02.717867Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter4", None, None, None)
-[2m2025-08-01T16:08:02.717876Z[0m [34mDEBUG[0m Processing line 86: "在Twine中，你可以使用变量来存储和管理数据。"
-[2m2025-08-01T16:08:02.717889Z[0m [34mDEBUG[0m Processing line 87: "变量可以用来存储用户的选择、游戏状态等信息，以便在不同的片段之间进行传递和使用。"
-[2m2025-08-01T16:08:02.717907Z[0m [34mDEBUG[0m Processing line 88: ""
-[2m2025-08-01T16:08:02.717915Z[0m [34mDEBUG[0m Processing line 89: "你可以使用{{{<<set>>}}}宏来创建和设置变量，例如{{{<<set $variableName to \"value\">>}}}。"
-[2m2025-08-01T16:08:02.717928Z[0m [34mDEBUG[0m Processing line 90: "变量名通常以$符号或_符号开头，以便于区分它们与普通文本。"
-[2m2025-08-01T16:08:02.717943Z[0m [34mDEBUG[0m Processing line 91: "在上面的例子中{{{$variableName}}}是变量的名称，\"value\"是你想要存储的值。"
-[2m2025-08-01T16:08:02.717957Z[0m [34mDEBUG[0m Processing line 92: ""
-[2m2025-08-01T16:08:02.717966Z[0m [34mDEBUG[0m Processing line 93: "$开头的变量是全局变量，可以在任何片段中访问和修改。"
-[2m2025-08-01T16:08:02.717980Z[0m [34mDEBUG[0m Processing line 94: "_开头的变量是局部变量，只能在当前片段中访问和修改。"
-[2m2025-08-01T16:08:02.717995Z[0m [34mDEBUG[0m Processing line 95: ""
-[2m2025-08-01T16:08:02.718003Z[0m [34mDEBUG[0m Processing line 96: "Twine中变量支持的类型与JavaScript类似，包括字符串、数字、布尔值等，也可以存储数组和对象等复杂数据结构。"
-[2m2025-08-01T16:08:02.718022Z[0m [34mDEBUG[0m Processing line 97: "你可以直接使用裸变量来引用变量的值，例如{{{$variableName}}}，Twine会自动将其替换为变量的实际值。"
-[2m2025-08-01T16:08:02.718039Z[0m [34mDEBUG[0m Processing line 98: "也可以使用{{{<<print $variableName>>}}}或{{{<<=>>}}}宏来输出变量的值。"
-[2m2025-08-01T16:08:02.718051Z[0m [34mDEBUG[0m Processing line 99: ""
-[2m2025-08-01T16:08:02.718060Z[0m [34mDEBUG[0m Processing line 100: "除了使用{{{<<set>>}}}宏来设置和修改变量外，你还可以在Twine的链接中对变量进行操作。"
-[2m2025-08-01T16:08:02.718076Z[0m [34mDEBUG[0m Processing line 101: "例如，{{{[[跳转页面|新页面][$variableName to \"value\"]]}}}表示在跳转到“新页面”时，将变量{{{$variableName}}}的值设置为\"value\"。"
-[2m2025-08-01T16:08:02.718092Z[0m [34mDEBUG[0m Processing line 102: "同理，图片链接也可以使用类似的方式，例如{{{[img[image.jpg][新页面][$variableName to \"value\"]]}}}。"
-[2m2025-08-01T16:08:02.718107Z[0m [34mDEBUG[0m Processing line 103: ""
-[2m2025-08-01T16:08:02.718115Z[0m [34mDEBUG[0m Processing line 104: ""
-[2m2025-08-01T16:08:02.718124Z[0m [34mDEBUG[0m Processing line 105: ":: 新页面"
-[2m2025-08-01T16:08:02.718134Z[0m [34mDEBUG[0m Saving passage 'Chapter4' with content length: 1392
-[2m2025-08-01T16:08:02.718143Z[0m [34mDEBUG[0m Parsing header: "新页面"
-[2m2025-08-01T16:08:02.718153Z[0m [34mDEBUG[0m Parsed metadata: ("新页面", None, None, None)
-[2m2025-08-01T16:08:02.718163Z[0m [34mDEBUG[0m Processing line 106: "这里是一个新页面"
-[2m2025-08-01T16:08:02.718173Z[0m [34mDEBUG[0m Processing line 107: "[[返回上一页|Chapter2]]"
-[2m2025-08-01T16:08:02.718206Z[0m [34mDEBUG[0m Saving passage '新页面' with content length: 53
-[2m2025-08-01T16:08:02.718359Z[0m [34mDEBUG[0m Node 'FileParser' processed successfully
-[2m2025-08-01T16:08:02.718374Z[0m [34mDEBUG[0m Processing node 4: 'DataAggregator'
-[2m2025-08-01T16:08:02.718397Z[0m [34mDEBUG[0m Set story name from StoryTitle passage: Some("幻梦酱的新手教程")
-[2m2025-08-01T16:08:02.718411Z[0m [34mDEBUG[0m Total passages aggregated: 10
-[2m2025-08-01T16:08:02.718421Z[0m [34mDEBUG[0m Node 'DataAggregator' processed successfully
-[2m2025-08-01T16:08:02.718430Z[0m [34mDEBUG[0m Processing node 5: 'HtmlGenerator'
-[2m2025-08-01T16:08:02.718447Z[0m [34mDEBUG[0m HtmlGenerator received 10 passages
-[2m2025-08-01T16:08:02.718456Z[0m [34mDEBUG[0m StoryTitle passage exists in HtmlGenerator input
-[2m2025-08-01T16:08:02.718473Z[0m [34mDEBUG[0m Generating HTML for 10 passages
-[2m2025-08-01T16:08:02.718489Z[0m [34mDEBUG[0m Searching for story format 'SugarCube' version '2.37.3' in directory: D:\tweers-windows-x86_64\story-format
-[2m2025-08-01T16:08:02.718603Z[0m [34mDEBUG[0m Looking for directory: D:\tweers-windows-x86_64\story-format\sugarcube-2.37.3
-[2m2025-08-01T16:08:02.718957Z[0m [34mDEBUG[0m Found format directory by name pattern: sugarcube-2.37.3
-[2m2025-08-01T16:08:02.740377Z[0m [34mDEBUG[0m Found 0 script passages and 0 stylesheet passages
-[2m2025-08-01T16:08:02.741452Z[0m [32m INFO[0m HTML generation completed successfully
-[2m2025-08-01T16:08:02.741495Z[0m [34mDEBUG[0m Node 'HtmlGenerator' processed successfully
-[2m2025-08-01T16:08:02.741508Z[0m [34mDEBUG[0m Processing node 6: 'FileWriter'
-[2m2025-08-01T16:08:02.743441Z[0m [32m INFO[0m Build completed successfully. Output written to: "index.html"
-[2m2025-08-01T16:08:02.743496Z[0m [34mDEBUG[0m Node 'FileWriter' processed successfully
-[2m2025-08-01T16:08:02.743515Z[0m [34mDEBUG[0m Pipeline 'TweersBuildPipeline' executed successfully
-[2m2025-08-01T16:08:02.743997Z[0m [32m INFO[0m Pipeline build completed successfully
+[2m2025-08-02T01:53:47.386341Z[0m [34mDEBUG[0m Starting build command
+[2m2025-08-02T01:53:47.386458Z[0m [34mDEBUG[0m Sources: ["幻梦酱的新手教程.twee"]
+[2m2025-08-02T01:53:47.386485Z[0m [34mDEBUG[0m Output: "index.html"
+[2m2025-08-02T01:53:47.386493Z[0m [34mDEBUG[0m Watch mode: false
+[2m2025-08-02T01:53:47.386503Z[0m [34mDEBUG[0m Base64 mode: false
+[2m2025-08-02T01:53:47.386510Z[0m [34mDEBUG[0m Start passage: None
+[2m2025-08-02T01:53:47.386523Z[0m [34mDEBUG[0m Starting pipeline-based build process...
+[2m2025-08-02T01:53:47.386621Z[0m [34mDEBUG[0m Scripts directory does not exist: "D:\\tweers-windows-x86_64\\scripts"
+[2m2025-08-02T01:53:47.386638Z[0m [34mDEBUG[0m Adding first node 'FileCollector' to pipeline 'TweersBuildPipeline'. Inputs: ["sources", "base64?"] (will be provided externally)
+[2m2025-08-02T01:53:47.386652Z[0m [34mDEBUG[0m Adding node 'FileChangeDetector' to pipeline 'TweersBuildPipeline'. Inputs: ["files", "context"], Available sources: ["files", "sources", "base64", "context", "output_path", "is_rebuild"]
+[2m2025-08-02T01:53:47.386663Z[0m [34mDEBUG[0m Adding node 'FileParser' to pipeline 'TweersBuildPipeline'. Inputs: ["modified_files", "context"], Available sources: ["files", "modified_files", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
+[2m2025-08-02T01:53:47.386676Z[0m [34mDEBUG[0m Adding node 'DataAggregator' to pipeline 'TweersBuildPipeline'. Inputs: ["files", "context", "parsed_data?"], Available sources: ["files", "modified_files", "context", "parsed_data", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
+[2m2025-08-02T01:53:47.386687Z[0m [34mDEBUG[0m Adding node 'HtmlGenerator' to pipeline 'TweersBuildPipeline'. Inputs: ["all_passages", "story_data", "context"], Available sources: ["files", "modified_files", "context", "parsed_data", "context", "all_passages", "story_data", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
+[2m2025-08-02T01:53:47.386698Z[0m [34mDEBUG[0m Adding node 'FileWriter' to pipeline 'TweersBuildPipeline'. Inputs: ["html_content", "output_path"], Available sources: ["files", "modified_files", "context", "parsed_data", "context", "all_passages", "story_data", "context", "html_content", "context", "sources", "base64", "context", "output_path", "is_rebuild"]
+[2m2025-08-02T01:53:47.386718Z[0m [34mDEBUG[0m Executing pipeline 'TweersBuildPipeline' with 6 nodes
+[2m2025-08-02T01:53:47.386726Z[0m [34mDEBUG[0m Processing node 1: 'FileCollector'
+[2m2025-08-02T01:53:47.386738Z[0m [34mDEBUG[0m Collecting files from 1 sources, base64: false
+[2m2025-08-02T01:53:47.386893Z[0m [32m INFO[0m Starting file collection, path count: 1
+[2m2025-08-02T01:53:47.386904Z[0m [34mDEBUG[0m Processing path: "幻梦酱的新手教程.twee"
+[2m2025-08-02T01:53:47.387195Z[0m [34mDEBUG[0m Checking file: "幻梦酱的新手教程.twee", base64_enabled: false
+[2m2025-08-02T01:53:47.387223Z[0m [34mDEBUG[0m File is a regular support file: "幻梦酱的新手教程.twee"
+[2m2025-08-02T01:53:47.387237Z[0m [34mDEBUG[0m Found support file: "幻梦酱的新手教程.twee"
+[2m2025-08-02T01:53:47.387361Z[0m [32m INFO[0m File collection completed, found 1 support files
+[2m2025-08-02T01:53:47.387378Z[0m [34mDEBUG[0m Found 1 support files
+[2m2025-08-02T01:53:47.387390Z[0m [34mDEBUG[0m Node 'FileCollector' processed successfully
+[2m2025-08-02T01:53:47.387398Z[0m [34mDEBUG[0m Processing node 2: 'FileChangeDetector'
+[2m2025-08-02T01:53:47.387492Z[0m [34mDEBUG[0m File modified: "幻梦酱的新手教程.twee"
+[2m2025-08-02T01:53:47.387507Z[0m [34mDEBUG[0m Found 1 modified files
+[2m2025-08-02T01:53:47.387515Z[0m [34mDEBUG[0m Node 'FileChangeDetector' processed successfully
+[2m2025-08-02T01:53:47.387523Z[0m [34mDEBUG[0m Processing node 3: 'FileParser'
+[2m2025-08-02T01:53:47.387643Z[0m [32m INFO[0m Parsing file: "幻梦酱的新手教程.twee"
+[2m2025-08-02T01:53:47.387917Z[0m [34mDEBUG[0m Starting to parse content with 183 lines
+[2m2025-08-02T01:53:47.387971Z[0m [34mDEBUG[0m Processing line 1: ":: StoryTitle"
+[2m2025-08-02T01:53:47.387985Z[0m [34mDEBUG[0m Parsing header: "StoryTitle"
+[2m2025-08-02T01:53:47.387997Z[0m [34mDEBUG[0m Parsed metadata: ("StoryTitle", None, None, None)
+[2m2025-08-02T01:53:47.388008Z[0m [34mDEBUG[0m Processing line 2: "幻梦酱的新手教程"
+[2m2025-08-02T01:53:47.388018Z[0m [34mDEBUG[0m Processing line 3: ""
+[2m2025-08-02T01:53:47.388025Z[0m [34mDEBUG[0m Processing line 4: ""
+[2m2025-08-02T01:53:47.388033Z[0m [34mDEBUG[0m Processing line 5: ":: StoryData"
+[2m2025-08-02T01:53:47.388042Z[0m [34mDEBUG[0m Saving passage 'StoryTitle' with content length: 24
+[2m2025-08-02T01:53:47.388052Z[0m [34mDEBUG[0m Parsing header: "StoryData"
+[2m2025-08-02T01:53:47.388060Z[0m [34mDEBUG[0m Parsed metadata: ("StoryData", None, None, None)
+[2m2025-08-02T01:53:47.388068Z[0m [34mDEBUG[0m Processing line 6: "{"
+[2m2025-08-02T01:53:47.388075Z[0m [34mDEBUG[0m Processing line 7: "  \"ifid\": \"01155382-7ADE-430A-A9E6-57E047E37F27\","
+[2m2025-08-02T01:53:47.388082Z[0m [34mDEBUG[0m Processing line 8: "  \"format\": \"SugarCube\","
+[2m2025-08-02T01:53:47.388089Z[0m [34mDEBUG[0m Processing line 9: "  \"format-version\": \"2.37.3\","
+[2m2025-08-02T01:53:47.388097Z[0m [34mDEBUG[0m Processing line 10: "  \"start\": \"Start\","
+[2m2025-08-02T01:53:47.388104Z[0m [34mDEBUG[0m Processing line 11: "  \"zoom\": 1"
+[2m2025-08-02T01:53:47.388112Z[0m [34mDEBUG[0m Processing line 12: "}"
+[2m2025-08-02T01:53:47.388119Z[0m [34mDEBUG[0m Processing line 13: ""
+[2m2025-08-02T01:53:47.388126Z[0m [34mDEBUG[0m Processing line 14: ""
+[2m2025-08-02T01:53:47.388133Z[0m [34mDEBUG[0m Processing line 15: ":: StoryCaption"
+[2m2025-08-02T01:53:47.388141Z[0m [34mDEBUG[0m Saving passage 'StoryData' with content length: 140
+[2m2025-08-02T01:53:47.388149Z[0m [34mDEBUG[0m Processing StoryData with content: "{\n  \"ifid\": \"01155382-7ADE-430A-A9E6-57E047E37F27\",\n  \"format\": \"SugarCube\",\n  \"format-version\": \"2.37.3\",\n  \"start\": \"Start\",\n  \"zoom\": 1\n}"
+[2m2025-08-02T01:53:47.388173Z[0m [34mDEBUG[0m Parsing header: "StoryCaption"
+[2m2025-08-02T01:53:47.388181Z[0m [34mDEBUG[0m Parsed metadata: ("StoryCaption", None, None, None)
+[2m2025-08-02T01:53:47.388188Z[0m [34mDEBUG[0m Processing line 16: "[[打开目录|Catalog]]"
+[2m2025-08-02T01:53:47.388196Z[0m [34mDEBUG[0m Processing line 17: ""
+[2m2025-08-02T01:53:47.388203Z[0m [34mDEBUG[0m Processing line 18: ""
+[2m2025-08-02T01:53:47.388210Z[0m [34mDEBUG[0m Processing line 19: ":: Catalog"
+[2m2025-08-02T01:53:47.388218Z[0m [34mDEBUG[0m Saving passage 'StoryCaption' with content length: 24
+[2m2025-08-02T01:53:47.388225Z[0m [34mDEBUG[0m Parsing header: "Catalog"
+[2m2025-08-02T01:53:47.388233Z[0m [34mDEBUG[0m Parsed metadata: ("Catalog", None, None, None)
+[2m2025-08-02T01:53:47.388240Z[0m [34mDEBUG[0m Processing line 20: "- [[开始|Start]]"
+[2m2025-08-02T01:53:47.388248Z[0m [34mDEBUG[0m Processing line 21: "- [[第一章：片段|Chapter1]]"
+[2m2025-08-02T01:53:47.388257Z[0m [34mDEBUG[0m Processing line 22: "- [[第二章：链接|Chapter2]]"
+[2m2025-08-02T01:53:47.388265Z[0m [34mDEBUG[0m Processing line 23: "- [[第三章：多媒体内容|Chapter3]]"
+[2m2025-08-02T01:53:47.388274Z[0m [34mDEBUG[0m Processing line 24: "- [[第四章：变量|Chapter4]]"
+[2m2025-08-02T01:53:47.388283Z[0m [34mDEBUG[0m Processing line 25: "- [[第五章：链接宏和do宏|Chapter5]]"
+[2m2025-08-02T01:53:47.388292Z[0m [34mDEBUG[0m Processing line 26: ""
+[2m2025-08-02T01:53:47.388299Z[0m [34mDEBUG[0m Processing line 27: ""
+[2m2025-08-02T01:53:47.388306Z[0m [34mDEBUG[0m Processing line 28: ":: Start {\"position\":\"400,300\",\"size\":\"100,100\"}"
+[2m2025-08-02T01:53:47.388314Z[0m [34mDEBUG[0m Saving passage 'Catalog' with content length: 208
+[2m2025-08-02T01:53:47.388324Z[0m [34mDEBUG[0m Parsing header: "Start {\"position\":\"400,300\",\"size\":\"100,100\"}"
+[2m2025-08-02T01:53:47.388335Z[0m [34mDEBUG[0m Parsed metadata: ("Start", None, Some("400,300"), Some("100,100"))
+[2m2025-08-02T01:53:47.388345Z[0m [34mDEBUG[0m Processing line 29: "恭喜你，当你看到这一行文字，意味着你的电脑浏览器可以正常使用，拥有了调试的环境，正所谓好的开始是成功的一半，这说明了你已经取得了一半的胜利。"
+[2m2025-08-02T01:53:47.388368Z[0m [34mDEBUG[0m Processing line 30: ""
+[2m2025-08-02T01:53:47.388375Z[0m [34mDEBUG[0m Processing line 31: "但是，不要骄傲，接下来还有很多东西需要你去学习。"
+[2m2025-08-02T01:53:47.388387Z[0m [34mDEBUG[0m Processing line 32: ""
+[2m2025-08-02T01:53:47.388394Z[0m [34mDEBUG[0m Processing line 33: "首先，你需要确定你已经安装了最新版本的Twine软件，并且已经安装了SugarCube格式的故事格式。"
+[2m2025-08-02T01:53:47.388409Z[0m [34mDEBUG[0m Processing line 34: ""
+[2m2025-08-02T01:53:47.388416Z[0m [34mDEBUG[0m Processing line 35: "如果你还没有安装Twine软件，可以访问<a href=\"https://twinery.org/\" target=\"_blank\">Twine官网</a>下载最新版本。"
+[2m2025-08-02T01:53:47.388428Z[0m [34mDEBUG[0m Processing line 36: "如果你不确定使用的是否为SugarCube格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“SugarCube 2.37.3”，并点击“设为默认故事格式”。"
+[2m2025-08-02T01:53:47.388446Z[0m [34mDEBUG[0m Processing line 37: ""
+[2m2025-08-02T01:53:47.388453Z[0m [34mDEBUG[0m Processing line 38: "在确认上述步骤已经完成后，你可以点击下面的链接，进入第一章内容的学习。"
+[2m2025-08-02T01:53:47.388468Z[0m [34mDEBUG[0m Processing line 39: ""
+[2m2025-08-02T01:53:47.388475Z[0m [34mDEBUG[0m Processing line 40: "[[下一章|Chapter1]]"
+[2m2025-08-02T01:53:47.388483Z[0m [34mDEBUG[0m Processing line 41: ""
+[2m2025-08-02T01:53:47.388490Z[0m [34mDEBUG[0m Processing line 42: ""
+[2m2025-08-02T01:53:47.388497Z[0m [34mDEBUG[0m Processing line 43: ":: Chapter1"
+[2m2025-08-02T01:53:47.388505Z[0m [34mDEBUG[0m Saving passage 'Start' with content length: 873
+[2m2025-08-02T01:53:47.388513Z[0m [34mDEBUG[0m Parsing header: "Chapter1"
+[2m2025-08-02T01:53:47.388520Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter1", None, None, None)
+[2m2025-08-02T01:53:47.388527Z[0m [34mDEBUG[0m Processing line 44: "Twine的基础是片段和链接，片段是Twine故事的基本构建块，而链接则是连接不同片段的桥梁。"
+[2m2025-08-02T01:53:47.388542Z[0m [34mDEBUG[0m Processing line 45: "在Twine中，片段是一个独立的文本块，它可以包含任何内容，包括文本、图片、音频等。"
+[2m2025-08-02T01:53:47.388557Z[0m [34mDEBUG[0m Processing line 46: ""
+[2m2025-08-02T01:53:47.388564Z[0m [34mDEBUG[0m Processing line 47: "每个片段都有一个唯一的标题，用于标识和引用该片段。"
+[2m2025-08-02T01:53:47.388576Z[0m [34mDEBUG[0m Processing line 48: "片段的标题可以是任何文本，但通常建议使用简短且具有描述性的标题，以便于在故事中进行引用和链接。"
+[2m2025-08-02T01:53:47.388593Z[0m [34mDEBUG[0m Processing line 49: ""
+[2m2025-08-02T01:53:47.388600Z[0m [34mDEBUG[0m Processing line 50: "片段的内容可以是纯文本，也可以包含HTML、CSS和JavaScript等代码。"
+[2m2025-08-02T01:53:47.388612Z[0m [34mDEBUG[0m Processing line 51: "现在你看到的内容就是一个片段的内容，它的标题是“Chapter1”，你可以在Twine中创建更多的片段来丰富你的故事。"
+[2m2025-08-02T01:53:47.388628Z[0m [34mDEBUG[0m Processing line 52: ""
+[2m2025-08-02T01:53:47.388635Z[0m [34mDEBUG[0m Processing line 53: "[[下一章|Chapter2]]"
+[2m2025-08-02T01:53:47.388643Z[0m [34mDEBUG[0m Processing line 54: ""
+[2m2025-08-02T01:53:47.388650Z[0m [34mDEBUG[0m Processing line 55: ""
+[2m2025-08-02T01:53:47.388657Z[0m [34mDEBUG[0m Processing line 56: ":: Chapter2"
+[2m2025-08-02T01:53:47.388665Z[0m [34mDEBUG[0m Saving passage 'Chapter1' with content length: 721
+[2m2025-08-02T01:53:47.388674Z[0m [34mDEBUG[0m Parsing header: "Chapter2"
+[2m2025-08-02T01:53:47.388682Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter2", None, None, None)
+[2m2025-08-02T01:53:47.388689Z[0m [34mDEBUG[0m Processing line 57: "恭喜你，刚刚成功的点击了Twine的链接，在Twine中，链接是非常重要的一个概念，它可以让你在不同的片段之间进行跳转。"
+[2m2025-08-02T01:53:47.388707Z[0m [34mDEBUG[0m Processing line 58: "在Twine中，链接的语法非常简单，只需要使用双括号包裹住链接的文本即可。"
+[2m2025-08-02T01:53:47.388720Z[0m [34mDEBUG[0m Processing line 59: ""
+[2m2025-08-02T01:53:47.388727Z[0m [34mDEBUG[0m Processing line 60: "例如，[[新页面]]表示点击“新页面”这个链接后，会跳转到名为“新页面”的章节。它的写法是：{{{[[新页面]]}}}"
+[2m2025-08-02T01:53:47.388744Z[0m [34mDEBUG[0m Processing line 61: "在Twine中，直接使用双括号包裹住片段标题是最简单的创建连接的方式，但这样做也有一个缺点，那就是显示的链接文本是片段标题本身，这可能不是你想要的效果。"
+[2m2025-08-02T01:53:47.388765Z[0m [34mDEBUG[0m Processing line 62: ""
+[2m2025-08-02T01:53:47.388772Z[0m [34mDEBUG[0m Processing line 63: "为了更好地控制链接的显示文本，你可以使用以下语法：{{{[[链接文本|片段标题]]}}}"
+[2m2025-08-02T01:53:47.388786Z[0m [34mDEBUG[0m Processing line 64: "这样，你可以将“链接文本”替换为你想要显示的文本，而“片段标题”则是你想要跳转到的章节标题。"
+[2m2025-08-02T01:53:47.388802Z[0m [34mDEBUG[0m Processing line 65: "例如[[跳转到新页面|新页面]]，表示点击“跳转到新页面”这个链接后，会跳转到名为“新页面”的章节。"
+[2m2025-08-02T01:53:47.388818Z[0m [34mDEBUG[0m Processing line 66: ""
+[2m2025-08-02T01:53:47.388825Z[0m [34mDEBUG[0m Processing line 67: "链接的片段可以是你故事中任意片段，包括所在的这个片段本身，如果链接跳转的片段不存在，Twine会自动创建一个新的片段。"
+[2m2025-08-02T01:53:47.388843Z[0m [34mDEBUG[0m Processing line 68: ""
+[2m2025-08-02T01:53:47.388850Z[0m [34mDEBUG[0m Processing line 69: "在Twine中，链接是一个十分重要的功能，任何一个片段如果没有链接指向它，它就无法被访问到。"
+[2m2025-08-02T01:53:47.388866Z[0m [34mDEBUG[0m Processing line 70: ""
+[2m2025-08-02T01:53:47.388873Z[0m [34mDEBUG[0m Processing line 71: "[[下一章|Chapter3]]"
+[2m2025-08-02T01:53:47.388880Z[0m [34mDEBUG[0m Processing line 72: ""
+[2m2025-08-02T01:53:47.388888Z[0m [34mDEBUG[0m Processing line 73: ""
+[2m2025-08-02T01:53:47.388895Z[0m [34mDEBUG[0m Processing line 74: ":: Chapter3"
+[2m2025-08-02T01:53:47.388903Z[0m [34mDEBUG[0m Saving passage 'Chapter2' with content length: 1347
+[2m2025-08-02T01:53:47.388911Z[0m [34mDEBUG[0m Parsing header: "Chapter3"
+[2m2025-08-02T01:53:47.388918Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter3", None, None, None)
+[2m2025-08-02T01:53:47.388925Z[0m [34mDEBUG[0m Processing line 75: "除了文字外，Twine还支持在片段中插入图片、音频等多媒体内容。"
+[2m2025-08-02T01:53:47.388938Z[0m [34mDEBUG[0m Processing line 76: ""
+[2m2025-08-02T01:53:47.388945Z[0m [34mDEBUG[0m Processing line 77: "你可以使用HTML标签来插入这些内容，例如使用{{{<img>}}}标签来插入图片，使用{{{<audio>}}}标签来插入音频。"
+[2m2025-08-02T01:53:47.388960Z[0m [34mDEBUG[0m Processing line 78: "你也可以使用Twine的内置宏来实现相同的功能，例如{{{<<audio>>}}}来插入音频文件。"
+[2m2025-08-02T01:53:47.388973Z[0m [34mDEBUG[0m Processing line 79: "Twine没有图像宏，但有更加简便的插入图像方式：{{{[img[image.jpg]]}}}，其中image.jpg是你想要插入的图片文件名。"
+[2m2025-08-02T01:53:47.388987Z[0m [34mDEBUG[0m Processing line 80: "如果你希望插入的图片在点击时可以跳转到其他片段，可以使用{{{[img[image.jpg|链接文本]]}}}的方式。"
+[2m2025-08-02T01:53:47.389026Z[0m [34mDEBUG[0m Processing line 81: "例如，{{{[img[image.jpg][新页面]]}}}"
+[2m2025-08-02T01:53:47.389036Z[0m [34mDEBUG[0m Processing line 82: ""
+[2m2025-08-02T01:53:47.389044Z[0m [34mDEBUG[0m Processing line 83: "[[下一章|Chapter4]]"
+[2m2025-08-02T01:53:47.389051Z[0m [34mDEBUG[0m Processing line 84: ""
+[2m2025-08-02T01:53:47.389059Z[0m [34mDEBUG[0m Processing line 85: ""
+[2m2025-08-02T01:53:47.389066Z[0m [34mDEBUG[0m Processing line 86: ":: Chapter4"
+[2m2025-08-02T01:53:47.389074Z[0m [34mDEBUG[0m Saving passage 'Chapter3' with content length: 679
+[2m2025-08-02T01:53:47.389083Z[0m [34mDEBUG[0m Parsing header: "Chapter4"
+[2m2025-08-02T01:53:47.389090Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter4", None, None, None)
+[2m2025-08-02T01:53:47.389097Z[0m [34mDEBUG[0m Processing line 87: "在Twine中，你可以使用变量来存储和管理数据。"
+[2m2025-08-02T01:53:47.389109Z[0m [34mDEBUG[0m Processing line 88: "变量可以用来存储用户的选择、游戏状态等信息，以便在不同的片段之间进行传递和使用。"
+[2m2025-08-02T01:53:47.389124Z[0m [34mDEBUG[0m Processing line 89: ""
+[2m2025-08-02T01:53:47.389131Z[0m [34mDEBUG[0m Processing line 90: "你可以使用{{{<<set>>}}}宏来创建和设置变量，例如{{{<<set $variableName to \"value\">>}}}。"
+[2m2025-08-02T01:53:47.389142Z[0m [34mDEBUG[0m Processing line 91: "变量名通常以$符号或_符号开头，以便于区分它们与普通文本。"
+[2m2025-08-02T01:53:47.389154Z[0m [34mDEBUG[0m Processing line 92: "在上面的例子中{{{$variableName}}}是变量的名称，\"value\"是你想要存储的值。"
+[2m2025-08-02T01:53:47.389166Z[0m [34mDEBUG[0m Processing line 93: ""
+[2m2025-08-02T01:53:47.389173Z[0m [34mDEBUG[0m Processing line 94: "$开头的变量是全局变量，可以在任何片段中访问和修改。"
+[2m2025-08-02T01:53:47.389186Z[0m [34mDEBUG[0m Processing line 95: "_开头的变量是局部变量，只能在当前片段中访问和修改。"
+[2m2025-08-02T01:53:47.389198Z[0m [34mDEBUG[0m Processing line 96: ""
+[2m2025-08-02T01:53:47.389205Z[0m [34mDEBUG[0m Processing line 97: "Twine中变量支持的类型与JavaScript类似，包括字符串、数字、布尔值等，也可以存储数组和对象等复杂数据结构。"
+[2m2025-08-02T01:53:47.389221Z[0m [34mDEBUG[0m Processing line 98: "你可以直接使用裸变量来引用变量的值，例如{{{$variableName}}}，Twine会自动将其替换为变量的实际值。"
+[2m2025-08-02T01:53:47.389235Z[0m [34mDEBUG[0m Processing line 99: "也可以使用{{{<<print $variableName>>}}}或{{{<<=>>}}}宏来输出变量的值。"
+[2m2025-08-02T01:53:47.389245Z[0m [34mDEBUG[0m Processing line 100: ""
+[2m2025-08-02T01:53:47.389253Z[0m [34mDEBUG[0m Processing line 101: "除了使用{{{<<set>>}}}宏来设置和修改变量外，你还可以在Twine的链接中对变量进行操作。"
+[2m2025-08-02T01:53:47.389266Z[0m [34mDEBUG[0m Processing line 102: "例如，{{{[[跳转页面|新页面][$variableName to \"value\"]]}}}表示在跳转到“新页面”时，将变量{{{$variableName}}}的值设置为\"value\"。"
+[2m2025-08-02T01:53:47.389280Z[0m [34mDEBUG[0m Processing line 103: "同理，图片链接也可以使用类似的方式，例如{{{[img[image.jpg][新页面][$variableName to \"value\"]]}}}。"
+[2m2025-08-02T01:53:47.389292Z[0m [34mDEBUG[0m Processing line 104: ""
+[2m2025-08-02T01:53:47.389299Z[0m [34mDEBUG[0m Processing line 105: "变量也可以作为片段标题的一部分来使用，例如{{{[[$variableName]]}}}，这表示点击链接后会跳转到名为“$variableName”的变量的值的片段。"
+[2m2025-08-02T01:53:47.389316Z[0m [34mDEBUG[0m Processing line 106: "你可以尝试点击下面的链接来测试变量的使用。"
+[2m2025-08-02T01:53:47.389327Z[0m [34mDEBUG[0m Processing line 107: "将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to \"新页面A\">>"
+[2m2025-08-02T01:53:47.389338Z[0m [34mDEBUG[0m Processing line 108: "<<link \"新页面A\">><<set $variableName to \"新页面A\">><<redo>><</link>> /"
+[2m2025-08-02T01:53:47.389347Z[0m [34mDEBUG[0m Processing line 109: "<<link \"新页面B\">><<set $variableName to \"新页面B\">><<redo>><</link>> /"
+[2m2025-08-02T01:53:47.389356Z[0m [34mDEBUG[0m Processing line 110: "<<link \"下一章\">><<set $variableName to \"Chapter5\">><<redo>><</link>> "
+[2m2025-08-02T01:53:47.389364Z[0m [34mDEBUG[0m Processing line 111: "<</nobr>>)"
+[2m2025-08-02T01:53:47.389371Z[0m [34mDEBUG[0m Processing line 112: "观察下面的跳转链接的变化，你可以点击它看看会进入什么页面："
+[2m2025-08-02T01:53:47.389384Z[0m [34mDEBUG[0m Processing line 113: "<<do>>[[$variableName]]<</do>>"
+[2m2025-08-02T01:53:47.389391Z[0m [34mDEBUG[0m Processing line 114: ""
+[2m2025-08-02T01:53:47.389398Z[0m [34mDEBUG[0m Processing line 115: ""
+[2m2025-08-02T01:53:47.389405Z[0m [34mDEBUG[0m Processing line 116: ":: 新页面A"
+[2m2025-08-02T01:53:47.389414Z[0m [34mDEBUG[0m Saving passage 'Chapter4' with content length: 2084
+[2m2025-08-02T01:53:47.389422Z[0m [34mDEBUG[0m Parsing header: "新页面A"
+[2m2025-08-02T01:53:47.389430Z[0m [34mDEBUG[0m Parsed metadata: ("新页面A", None, None, None)
+[2m2025-08-02T01:53:47.389438Z[0m [34mDEBUG[0m Processing line 117: "这个片段的标题是新页面A"
+[2m2025-08-02T01:53:47.389447Z[0m [34mDEBUG[0m Processing line 118: ""
+[2m2025-08-02T01:53:47.389454Z[0m [34mDEBUG[0m Processing line 119: "[[返回上一页|Chapter4]]"
+[2m2025-08-02T01:53:47.389463Z[0m [34mDEBUG[0m Processing line 120: ""
+[2m2025-08-02T01:53:47.389470Z[0m [34mDEBUG[0m Processing line 121: ""
+[2m2025-08-02T01:53:47.389477Z[0m [34mDEBUG[0m Processing line 122: ":: 新页面B"
+[2m2025-08-02T01:53:47.389485Z[0m [34mDEBUG[0m Saving passage '新页面A' with content length: 64
+[2m2025-08-02T01:53:47.389492Z[0m [34mDEBUG[0m Parsing header: "新页面B"
+[2m2025-08-02T01:53:47.389500Z[0m [34mDEBUG[0m Parsed metadata: ("新页面B", None, None, None)
+[2m2025-08-02T01:53:47.389508Z[0m [34mDEBUG[0m Processing line 123: "这个片段的标题是新页面B"
+[2m2025-08-02T01:53:47.389518Z[0m [34mDEBUG[0m Processing line 124: ""
+[2m2025-08-02T01:53:47.389525Z[0m [34mDEBUG[0m Processing line 125: "[[返回上一页|Chapter4]]"
+[2m2025-08-02T01:53:47.389533Z[0m [34mDEBUG[0m Processing line 126: ""
+[2m2025-08-02T01:53:47.389540Z[0m [34mDEBUG[0m Processing line 127: ""
+[2m2025-08-02T01:53:47.389547Z[0m [34mDEBUG[0m Processing line 128: ":: 新页面C"
+[2m2025-08-02T01:53:47.389555Z[0m [34mDEBUG[0m Saving passage '新页面B' with content length: 64
+[2m2025-08-02T01:53:47.389562Z[0m [34mDEBUG[0m Parsing header: "新页面C"
+[2m2025-08-02T01:53:47.389571Z[0m [34mDEBUG[0m Parsed metadata: ("新页面C", None, None, None)
+[2m2025-08-02T01:53:47.389578Z[0m [34mDEBUG[0m Processing line 129: "这个片段的标题是新页面C"
+[2m2025-08-02T01:53:47.389588Z[0m [34mDEBUG[0m Processing line 130: ""
+[2m2025-08-02T01:53:47.389595Z[0m [34mDEBUG[0m Processing line 131: "[[返回上一页|Chapter5]]"
+[2m2025-08-02T01:53:47.389603Z[0m [34mDEBUG[0m Processing line 132: ""
+[2m2025-08-02T01:53:47.389610Z[0m [34mDEBUG[0m Processing line 133: ""
+[2m2025-08-02T01:53:47.389617Z[0m [34mDEBUG[0m Processing line 134: ":: 新页面D"
+[2m2025-08-02T01:53:47.389625Z[0m [34mDEBUG[0m Saving passage '新页面C' with content length: 64
+[2m2025-08-02T01:53:47.389633Z[0m [34mDEBUG[0m Parsing header: "新页面D"
+[2m2025-08-02T01:53:47.389641Z[0m [34mDEBUG[0m Parsed metadata: ("新页面D", None, None, None)
+[2m2025-08-02T01:53:47.389649Z[0m [34mDEBUG[0m Processing line 135: "这个片段的标题是新页面D"
+[2m2025-08-02T01:53:47.389658Z[0m [34mDEBUG[0m Processing line 136: ""
+[2m2025-08-02T01:53:47.389665Z[0m [34mDEBUG[0m Processing line 137: "[[返回上一页|Chapter5]]"
+[2m2025-08-02T01:53:47.389675Z[0m [34mDEBUG[0m Processing line 138: ""
+[2m2025-08-02T01:53:47.389683Z[0m [34mDEBUG[0m Processing line 139: ""
+[2m2025-08-02T01:53:47.389690Z[0m [34mDEBUG[0m Processing line 140: ":: Chapter5"
+[2m2025-08-02T01:53:47.389697Z[0m [34mDEBUG[0m Saving passage '新页面D' with content length: 64
+[2m2025-08-02T01:53:47.389705Z[0m [34mDEBUG[0m Parsing header: "Chapter5"
+[2m2025-08-02T01:53:47.389712Z[0m [34mDEBUG[0m Parsed metadata: ("Chapter5", None, None, None)
+[2m2025-08-02T01:53:47.389720Z[0m [34mDEBUG[0m Processing line 141: "你是否发现，上一章出现了点击后不会跳转到新片段的情况？"
+[2m2025-08-02T01:53:47.389732Z[0m [34mDEBUG[0m Processing line 142: "这是因为使用了不同于{{{[[新页面]]}}}的另一种链接方式：{{{<<link \"链接文本\">>链接内容<</link>}}}。"
+[2m2025-08-02T01:53:47.389746Z[0m [34mDEBUG[0m Processing line 143: "在{{{<<link>>}}}宏中，除了可以设置和{{{[[新页面]]}}}一样的跳转链接外，还可以在链接中添加其他内容，例如设置变量、执行代码等。"
+[2m2025-08-02T01:53:47.389763Z[0m [34mDEBUG[0m Processing line 144: "例如{{{<<link \"新页面A\">><<set $variableName to \"新页面A\">><<redo>><</link>>}}}，它的作用不是跳转到新页面A，而是设置变量{{{$variableName}}}的值为“新页面A”。"
+[2m2025-08-02T01:53:47.389778Z[0m [34mDEBUG[0m Processing line 145: "现在你可以尝试点击下面的链接，看看会发生什么："
+[2m2025-08-02T01:53:47.389789Z[0m [34mDEBUG[0m Processing line 146: "将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to \"新页面C\">>"
+[2m2025-08-02T01:53:47.389799Z[0m [34mDEBUG[0m Processing line 147: "<<link \"新页面C\">><<set $variableName to \"新页面C\">><<redo>><</link>> /"
+[2m2025-08-02T01:53:47.389808Z[0m [34mDEBUG[0m Processing line 148: "<<link \"新页面D\">><<set $variableName to \"新页面D\">><<redo>><</link>>"
+[2m2025-08-02T01:53:47.389816Z[0m [34mDEBUG[0m Processing line 149: "<</nobr>>)"
+[2m2025-08-02T01:53:47.389823Z[0m [34mDEBUG[0m Processing line 150: "现在{{{$variableName}}}的值为：<<do>>$variableName<</do>>"
+[2m2025-08-02T01:53:47.389832Z[0m [34mDEBUG[0m Processing line 151: "再次观察下面的跳转链接的变化："
+[2m2025-08-02T01:53:47.389842Z[0m [34mDEBUG[0m Processing line 152: "[[$variableName]]"
+[2m2025-08-02T01:53:47.389849Z[0m [34mDEBUG[0m Processing line 153: "是不是发现无论将{{{$variableName}}}设置成什么，上面的链接都没有发生变化？"
+[2m2025-08-02T01:53:47.389861Z[0m [34mDEBUG[0m Processing line 154: "问题出在了哪里？"
+[2m2025-08-02T01:53:47.389870Z[0m [34mDEBUG[0m Processing line 155: "这是上一章的链接部分："
+[2m2025-08-02T01:53:47.389880Z[0m [34mDEBUG[0m Processing line 156: "{{{"
+[2m2025-08-02T01:53:47.389887Z[0m [34mDEBUG[0m Processing line 157: "将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to \"新页面A\">>"
+[2m2025-08-02T01:53:47.389896Z[0m [34mDEBUG[0m Processing line 158: "<<link \"新页面A\">><<set $variableName to \"新页面A\">><<redo>><</link>> /"
+[2m2025-08-02T01:53:47.389905Z[0m [34mDEBUG[0m Processing line 159: "<<link \"新页面B\">><<set $variableName to \"新页面B\">><<redo>><</link>> /"
+[2m2025-08-02T01:53:47.389913Z[0m [34mDEBUG[0m Processing line 160: "<<link \"下一章\">><<set $variableName to \"Chapter5\">><<redo>><</link>> "
+[2m2025-08-02T01:53:47.389921Z[0m [34mDEBUG[0m Processing line 161: "<</nobr>>)"
+[2m2025-08-02T01:53:47.389928Z[0m [34mDEBUG[0m Processing line 162: "观察下面的跳转链接的变化，你可以点击它看看会进入什么页面："
+[2m2025-08-02T01:53:47.389941Z[0m [34mDEBUG[0m Processing line 163: "<<do>>[[$variableName]]<</do>>"
+[2m2025-08-02T01:53:47.389948Z[0m [34mDEBUG[0m Processing line 164: "}}}"
+[2m2025-08-02T01:53:47.389962Z[0m [34mDEBUG[0m Processing line 165: "这是这一章的链接部分："
+[2m2025-08-02T01:53:47.389974Z[0m [34mDEBUG[0m Processing line 166: "{{{"
+[2m2025-08-02T01:53:47.389981Z[0m [34mDEBUG[0m Processing line 167: "将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to \"新页面C\">>"
+[2m2025-08-02T01:53:47.389991Z[0m [34mDEBUG[0m Processing line 168: "<<link \"新页面C\">><<set $variableName to \"新页面C\">><<redo>><</link>> /"
+[2m2025-08-02T01:53:47.390000Z[0m [34mDEBUG[0m Processing line 169: "<<link \"新页面D\">><<set $variableName to \"新页面D\">><<redo>><</link>>"
+[2m2025-08-02T01:53:47.390008Z[0m [34mDEBUG[0m Processing line 170: "<</nobr>>)"
+[2m2025-08-02T01:53:47.390015Z[0m [34mDEBUG[0m Processing line 171: "现在{{{$variableName}}}的值为：<<do>>$variableName<</do>>"
+[2m2025-08-02T01:53:47.390024Z[0m [34mDEBUG[0m Processing line 172: "再次观察下面的跳转链接的变化："
+[2m2025-08-02T01:53:47.390034Z[0m [34mDEBUG[0m Processing line 173: "[[$variableName]]"
+[2m2025-08-02T01:53:47.390042Z[0m [34mDEBUG[0m Processing line 174: "}}}"
+[2m2025-08-02T01:53:47.390049Z[0m [34mDEBUG[0m Processing line 175: "是不是发现，相比于上一章，这一章的跳转链接部分没有使用{{{<<do>>}}}宏？"
+[2m2025-08-02T01:53:47.390062Z[0m [34mDEBUG[0m Processing line 176: "这就是问题所在。"
+[2m2025-08-02T01:53:47.390071Z[0m [34mDEBUG[0m Processing line 177: "在Twine中，{{{<<do>>}}}宏用于在{{{<<redo>>}}}宏被触发的时候，执行内部包裹的代码并刷新结果。"
+[2m2025-08-02T01:53:47.390084Z[0m [34mDEBUG[0m Processing line 178: "如果没有使用{{{<<do>>}}}宏和{{{<<redo>>}}}宏，Twine就不会重新渲染片段内容，因此即使修改了变量的值，当前片段内使用变量的部分也不会更新，这在使用{{{<<link>>}}}宏时尤其明显。"
+[2m2025-08-02T01:53:47.390104Z[0m [34mDEBUG[0m Processing line 179: "所以，如果你想要在当前片段中修改已显示的变量的值并实时更新，必须使用{{{<<do>>}}}宏来包裹住变量的值，并在触发的链接中加入{{{<<redo>>}}}。"
+[2m2025-08-02T01:53:47.390122Z[0m [34mDEBUG[0m Processing line 180: ""
+[2m2025-08-02T01:53:47.390129Z[0m [34mDEBUG[0m Processing line 181: ":: 新页面"
+[2m2025-08-02T01:53:47.390138Z[0m [34mDEBUG[0m Saving passage 'Chapter5' with content length: 2748
+[2m2025-08-02T01:53:47.390146Z[0m [34mDEBUG[0m Parsing header: "新页面"
+[2m2025-08-02T01:53:47.390154Z[0m [34mDEBUG[0m Parsed metadata: ("新页面", None, None, None)
+[2m2025-08-02T01:53:47.390162Z[0m [34mDEBUG[0m Processing line 182: "这里是一个新页面"
+[2m2025-08-02T01:53:47.390171Z[0m [34mDEBUG[0m Processing line 183: "[[返回上一页|Chapter2]]"
+[2m2025-08-02T01:53:47.390179Z[0m [34mDEBUG[0m Saving passage '新页面' with content length: 53
+[2m2025-08-02T01:53:47.390300Z[0m [34mDEBUG[0m Node 'FileParser' processed successfully
+[2m2025-08-02T01:53:47.390312Z[0m [34mDEBUG[0m Processing node 4: 'DataAggregator'
+[2m2025-08-02T01:53:47.390334Z[0m [34mDEBUG[0m Set story name from StoryTitle passage: Some("幻梦酱的新手教程")
+[2m2025-08-02T01:53:47.390345Z[0m [34mDEBUG[0m Total passages aggregated: 15
+[2m2025-08-02T01:53:47.390354Z[0m [34mDEBUG[0m Node 'DataAggregator' processed successfully
+[2m2025-08-02T01:53:47.390361Z[0m [34mDEBUG[0m Processing node 5: 'HtmlGenerator'
+[2m2025-08-02T01:53:47.390373Z[0m [34mDEBUG[0m HtmlGenerator received 15 passages
+[2m2025-08-02T01:53:47.390380Z[0m [34mDEBUG[0m StoryTitle passage exists in HtmlGenerator input
+[2m2025-08-02T01:53:47.390402Z[0m [34mDEBUG[0m Generating HTML for 15 passages
+[2m2025-08-02T01:53:47.390415Z[0m [34mDEBUG[0m Searching for story format 'SugarCube' version '2.37.3' in directory: D:\tweers-windows-x86_64\story-format
+[2m2025-08-02T01:53:47.390512Z[0m [34mDEBUG[0m Looking for directory: D:\tweers-windows-x86_64\story-format\sugarcube-2.37.3
+[2m2025-08-02T01:53:47.390738Z[0m [34mDEBUG[0m Found format directory by name pattern: sugarcube-2.37.3
+[2m2025-08-02T01:53:47.407890Z[0m [34mDEBUG[0m Found 0 script passages and 0 stylesheet passages
+[2m2025-08-02T01:53:47.408798Z[0m [32m INFO[0m HTML generation completed successfully
+[2m2025-08-02T01:53:47.408853Z[0m [34mDEBUG[0m Node 'HtmlGenerator' processed successfully
+[2m2025-08-02T01:53:47.408876Z[0m [34mDEBUG[0m Processing node 6: 'FileWriter'
+[2m2025-08-02T01:53:47.410453Z[0m [32m INFO[0m Build completed successfully. Output written to: "index.html"
+[2m2025-08-02T01:53:47.410481Z[0m [34mDEBUG[0m Node 'FileWriter' processed successfully
+[2m2025-08-02T01:53:47.410491Z[0m [34mDEBUG[0m Pipeline 'TweersBuildPipeline' executed successfully
+[2m2025-08-02T01:53:47.410770Z[0m [32m INFO[0m Pipeline build completed successfully

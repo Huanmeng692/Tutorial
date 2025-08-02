@@ -22,6 +22,7 @@
 - [[第二章：链接|Chapter2]]
 - [[第三章：多媒体内容|Chapter3]]
 - [[第四章：变量|Chapter4]]
+- [[第五章：链接宏和do宏|Chapter5]]
 
 
 :: Start {"position":"400,300","size":"100,100"}
@@ -101,6 +102,81 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 例如，{{{[[跳转页面|新页面][$variableName to "value"]]}}}表示在跳转到“新页面”时，将变量{{{$variableName}}}的值设置为"value"。
 同理，图片链接也可以使用类似的方式，例如{{{[img[image.jpg][新页面][$variableName to "value"]]}}}。
 
+变量也可以作为片段标题的一部分来使用，例如{{{[[$variableName]]}}}，这表示点击链接后会跳转到名为“$variableName”的变量的值的片段。
+你可以尝试点击下面的链接来测试变量的使用。
+将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to "新页面A">>
+<<link "新页面A">><<set $variableName to "新页面A">><<redo>><</link>> /
+<<link "新页面B">><<set $variableName to "新页面B">><<redo>><</link>> /
+<<link "下一章">><<set $variableName to "Chapter5">><<redo>><</link>> 
+<</nobr>>)
+观察下面的跳转链接的变化，你可以点击它看看会进入什么页面：
+<<do>>[[$variableName]]<</do>>
+
+
+:: 新页面A
+这个片段的标题是新页面A
+
+[[返回上一页|Chapter4]]
+
+
+:: 新页面B
+这个片段的标题是新页面B
+
+[[返回上一页|Chapter4]]
+
+
+:: 新页面C
+这个片段的标题是新页面C
+
+[[返回上一页|Chapter5]]
+
+
+:: 新页面D
+这个片段的标题是新页面D
+
+[[返回上一页|Chapter5]]
+
+
+:: Chapter5
+你是否发现，上一章出现了点击后不会跳转到新片段的情况？
+这是因为使用了不同于{{{[[新页面]]}}}的另一种链接方式：{{{<<link "链接文本">>链接内容<</link>}}}。
+在{{{<<link>>}}}宏中，除了可以设置和{{{[[新页面]]}}}一样的跳转链接外，还可以在链接中添加其他内容，例如设置变量、执行代码等。
+例如{{{<<link "新页面A">><<set $variableName to "新页面A">><<redo>><</link>>}}}，它的作用不是跳转到新页面A，而是设置变量{{{$variableName}}}的值为“新页面A”。
+现在你可以尝试点击下面的链接，看看会发生什么：
+将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to "新页面C">>
+<<link "新页面C">><<set $variableName to "新页面C">><<redo>><</link>> /
+<<link "新页面D">><<set $variableName to "新页面D">><<redo>><</link>>
+<</nobr>>)
+现在{{{$variableName}}}的值为：<<do>>$variableName<</do>>
+再次观察下面的跳转链接的变化：
+[[$variableName]]
+是不是发现无论将{{{$variableName}}}设置成什么，上面的链接都没有发生变化？
+问题出在了哪里？
+这是上一章的链接部分：
+{{{
+将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to "新页面A">>
+<<link "新页面A">><<set $variableName to "新页面A">><<redo>><</link>> /
+<<link "新页面B">><<set $variableName to "新页面B">><<redo>><</link>> /
+<<link "下一章">><<set $variableName to "Chapter5">><<redo>><</link>> 
+<</nobr>>)
+观察下面的跳转链接的变化，你可以点击它看看会进入什么页面：
+<<do>>[[$variableName]]<</do>>
+}}}
+这是这一章的链接部分：
+{{{
+将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to "新页面C">>
+<<link "新页面C">><<set $variableName to "新页面C">><<redo>><</link>> /
+<<link "新页面D">><<set $variableName to "新页面D">><<redo>><</link>>
+<</nobr>>)
+现在{{{$variableName}}}的值为：<<do>>$variableName<</do>>
+再次观察下面的跳转链接的变化：
+[[$variableName]]
+}}}
+是不是发现，相比于上一章，这一章的跳转链接部分没有使用{{{<<do>>}}}宏？
+这就是问题所在。
+在Twine中，{{{<<do>>}}}宏用于在{{{<<redo>>}}}宏被触发的时候，执行内部包裹的代码并刷新结果。
+如果没有使用{{{<<do>>}}}宏和{{{<<redo>>}}}宏，Twine就不会重新渲染片段内容，因此即使修改了变量的值，当前片段内使用变量的部分也不会更新，这在使用{{{<<link>>}}}宏时尤其明显。
+所以，如果你想要在当前片段中修改已显示的变量的值并实时更新，必须使用{{{<<do>>}}}宏来包裹住变量的值，并在触发的链接中加入{{{<<redo>>}}}。
 
 :: 新页面
 这里是一个新页面
