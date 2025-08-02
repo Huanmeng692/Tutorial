@@ -161,7 +161,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 问题出在了哪里？
 这是上一章的链接部分：
 {{{
-将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to "新页面A">>
+将$variableName变量设置为：（<<nobr>><<set $variableName to "新页面A">>
 <<link "新页面A">><<set $variableName to "新页面A">><<redo>><</link>> /
 <<link "新页面B">><<set $variableName to "新页面B">><<redo>><</link>> /
 <<link "下一章">><<set $variableName to "Chapter5">><<redo>><</link>> 
@@ -171,11 +171,11 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 }}}
 这是这一章的链接部分：
 {{{
-将{{{$variableName}}}变量设置为：（<<nobr>><<set $variableName to "新页面C">>
+将$variableName变量设置为：（<<nobr>><<set $variableName to "新页面C">>
 <<link "新页面C">><<set $variableName to "新页面C">><<redo>><</link>> /
 <<link "新页面D">><<set $variableName to "新页面D">><<redo>><</link>>
 <</nobr>>)
-现在{{{$variableName}}}的值为：<<do>>$variableName<</do>>
+现在$variableName的值为：<<do>>$variableName<</do>>
 再次观察下面的跳转链接的变化：
 [[$variableName]]
 }}}
