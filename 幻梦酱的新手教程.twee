@@ -12,20 +12,114 @@
 }
 
 
+:: StoryAuthor
+幻梦酱
+
+
+:: StoryBanner
+[幻梦酱的故事横幅]
+
 :: StoryCaption
 [[打开目录|Catalog]]
 
 
+:: StoryMenu
+[[这里也可以打开目录|Catalog]]
+
+
 :: Catalog
 - [[开始|Start]]
+----
 - [[第一章：片段|Chapter1]]
 - [[第二章：链接|Chapter2]]
 - [[第三章：多媒体内容|Chapter3]]
 - [[第四章：变量|Chapter4]]
-- [[第五章：链接宏和do宏|Chapter5]]
+- [[第五章：链接宏和更新宏|Chapter5]]
 - [[第六章：条件宏|Chapter6]]
 - [[第七章：循环宏|Chapter7]]
 - [[第八章：捕获宏|Chapter8]]
+----
+- [[第九章：特殊段落和标签|Chapter9]]
+- [[第十章：数组和对象|Chapter10]]
+
+
+:: StoryInit
+<<set $SpecialNameText to [
+  "这个片段的内容会在每个故事片段完成显示后执行一次，适用于需要在每个片段显示后执行的代码，比如重新设置变量、重新设置片段内容的样式等，由于此时片段内变量内容已完成渲染，直接修改相关变量并不会更新片段内相应内容的显示。",
+  "这个片段的内容会附加到每个故事片段的顶部，适用于需要在每个片段顶部显示的内容，比如导航链接、章节标题等。",
+  "这个片段的内容会在每个故事片段开始渲染前执行一次，适用于需要在每个片段开始渲染前执行的代码，比如初始化变量、设置片段内容的样式等，由于此时片段内容还没有开始渲染，因此修改相关变量会更新片段内相应内容的显示。",
+  "这个片段用于填充界面栏中的作者署名区域，在故事标题下方，元素的ID为story-author",
+  "这个片段用于填充界面栏中的故事横幅区域，在故事标题上方，元素的ID为story-banner",
+  "这个片段用于填充界面栏中的故事标题区域，它就是故事标题，元素的ID为story-caption",
+  "这个片段用于设置浏览器的标题栏和UI栏中的显示标题，元素的ID为story-title，如果省略，会默认使用故事标题作为显示标题。",
+  "这个片段的内容会在故事开始前执行一次，之后不会再次运行，适用于需要在故事开始前执行的代码，比如初始化变量。",
+  "这个片段用于填充界面栏中的菜单区域，元素的ID为story-menu，这个部分虽然会显示内容，但仅显示按钮和链接等内容，不能显示文本内容。",
+  "这个片段用于填充界面栏中的故事副标题区域，在故事标题下方，元素的ID为story-subtitle",
+  "这个标签用于将段落注册为小组件片段，它会在游戏启动时进行加载（时机早于StoryInit片段），注册为小组件片段后，与其他特殊片段一样，不能在故事中通过链接进行访问，但可以在其他片段中使用{{{<<widget>>}}}宏来调用。",
+  "这个标签会在段落渲染之前删除前导/尾随换行符，并将所有剩余的换行符序列替换为单个空格，相当于将整个段轮廓包裹在{{{<<nobr>>}}}宏内。"
+]>>
+<<set $SpecialName to {
+  PassageDone:{
+    class:"故事片段渲染后",
+    text:0,
+    output:"false"
+  },
+  PassageHeader:{
+    class:"故事片段渲染时",
+    text:1,
+    output:"true"
+  },
+  PassageReady:{
+    class:"故事片段渲染前",
+    text:2,
+    output:"false"
+  },
+  StoryAuthor:{
+    class:"故事开始时",
+    text:3,
+    output:"true"
+  },
+  StoryBanner:{
+    class:"故事开始时",
+    text:4,
+    output:"true"
+  },
+  StoryCaption:{
+    class:"故事开始时",
+    text:5,
+    output:"true"
+  },
+  StoryDisplayTitle:{
+    class:"故事开始时",
+    text:6,
+    output:"true"
+  },
+  StoryInit:{
+    class:"故事开始前",
+    text:7,
+    output:"false"
+  },
+  StoryMenu:{
+    class:"故事开始时",
+    text:8,
+    output:"true"
+  },
+  StorySubtitle:{
+    class:"故事开始时",
+    text:9,
+    output:"true"
+  },
+  widget:{
+    class:"故事片段渲染时",
+    text:10,
+    output:"true"
+  },
+  nobr:{
+    class:"故事片段渲染时",
+    text:11,
+    output:"true"
+  }
+}>>
 
 
 :: Start {"position":"400,300","size":"100,100"}
@@ -38,9 +132,12 @@
 如果你还没有安装Twine软件，可以访问<a href="https://twinery.org/" target="_blank">Twine官网</a>下载最新版本。
 如果你不确定使用的是否为SugarCube格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“SugarCube 2.37.3”，并点击“设为默认故事格式”。
 
-在确认上述步骤已经完成后，你可以点击下面的链接，进入第一章内容的学习。
+在确认上述步骤已经完成后，你可以点击下面的链接，进入基础部分内容的学习。
+若你已经熟悉了基础部分的内容，可以直接跳转到进阶部分的学习。
 
-[[下一章|Chapter1]]
+[[开始基础章节|Chapter1]]
+
+[[进入进阶章节|Chapter9]]
 
 
 :: Chapter1
@@ -80,6 +177,7 @@ Twine的基础是片段和链接，片段是Twine故事的基本构建块，而�
 
 :: Chapter3
 除了文字外，Twine还支持在片段中插入图片、音频等多媒体内容。
+例如：[img[这是一枚可爱的芙芙|img/可爱的芙芙.jpg]]
 
 你可以使用HTML标签来插入这些内容，例如使用{{{<img>}}}标签来插入图片，使用{{{<audio>}}}标签来插入音频。
 你也可以使用Twine的内置宏来实现相同的功能，例如{{{<<audio>>}}}来插入音频文件。
@@ -285,3 +383,94 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 <</for>>
 }}}
 这样，每次循环时，{{{_value}}}的值都会被捕获并创建相应的本地化版本，点击链接时就会跳转到对应的片段，而不是最后一个元素的值所代表的片段。
+
+
+[[进入进阶章节|Chapter9]]
+
+
+:: Chapter9 [nobr]
+在Twine中，除了基本的片段和链接外，还有一些特殊的片段和标签。
+其中特殊片段是Twine内置有着特殊作用的片段，它们有着各自的功能，不应该在故事中通过链接进行访问。
+以下是Twine内置的特殊片段和标签，你可以点击这些链接查看其具体功能：<<set _name to $SpecialName.PassageReady>>
+<div id="chapter9-body">
+<div id="chapter9-left">
+<br>Passage片段<br><br>
+<<link "PassageReady">><<set _name to $SpecialName.PassageReady>><<redo>><</link>><br>
+<<link "PassageHeader">><<set _name to $SpecialName.PassageHeader>><<redo>><</link>><br>
+<<link "PassageDone">><<set _name to $SpecialName.PassageDone>><<redo>><</link>><br>
+<br>Story片段<br><br>
+<<link "StoryInit">><<set _name to $SpecialName.StoryInit>><<redo>><</link>><br>
+<<link "StoryMenu">><<set _name to $SpecialName.StoryMenu>><<redo>><</link>><br>
+<<link "StoryCaption">><<set _name to $SpecialName.StoryCaption>><<redo>><</link>><br>
+<<link "StoryAuthor">><<set _name to $SpecialName.StoryAuthor>><<redo>><</link>><br>
+<<link "StoryBanner">><<set _name to $SpecialName.StoryBanner>><<redo>><</link>><br>
+<<link "StoryDisplayTitle">><<set _name to $SpecialName.StoryDisplayTitle>><<redo>><</link>><br>
+<<link "StorySubtitle">><<set _name to $SpecialName.StorySubtitle>><<redo>><</link>><br>
+<br>特殊标签<br><br>
+<<link "widget">><<set _name to $SpecialName.widget>><<redo>><</link>><br>
+<<link "nobr">><<set _name to $SpecialName.nobr>><<redo>><</link>><br>
+</div>
+<div id="chapter9-right"><<do>>
+<div id="chapter9-right-class">运行或渲染时机：_name.class</div>
+<div id="chapter9-right-output">是否会显示内容：<<= _name.output ? "是" : "否" >></div>
+<div id="chapter9-right-text"><<= $SpecialNameText[_name.text]>></div>
+<</do>></div>
+</div>
+
+[[下一章|Chapter10]]
+
+
+:: Chapter10
+在Twine中，数组和对象是两种常用的数据结构。
+
+数组是一种有序的数据集合，可以存储多个值，每个值都有一个索引。
+它的结构为：{{{[value1, value2, value3]}}}，其中{{{value1}}}、{{{value2}}}和{{{value3}}}是数组中的元素，它们的索引从0开始依次递增。
+若要访问数组中的元素，可以使用{{{$array[index]}}}的方式，其中{{{$array}}}是数组的名称，{{{index}}}是元素的索引。
+
+对象是一种无序的数据集合，可以存储多个键值对，每个键都有一个唯一的名称。
+它的结构为：{{{{"key1": "value1", "key2": "value2"}}}}，其中{{{key1}}}和{{{key2}}}是对象中的键，{{{"value1"}}}和{{{"value2"}}}是对应的值。
+若要访问对象中的值，可以使用{{{$object.key}}}的方式，其中{{{$object}}}是对象的名称，{{{key}}}是键的名称。
+
+你可以使用{{{<<set>>}}}宏来创建和设置数组和对象。
+例如，{{{<<set $array to [1, 2, 3]>>}}}表示创建一个名为{{{$array}}}的数组，包含三个元素1、2和3。
+同样，{{{<<set $object to {key1: "value1", key2: "value2"}>>}}}表示创建一个名为{{{$object}}}的对象，包含两个键值对，键为{{{key1}}}和{{{key2}}}，对应的值为{{{"value1"}}}和{{{"value2"}}}。
+
+数组的元素可以是任何类型的值，包括字符串、数字、布尔值、对象等。
+对象的值也可以是任何类型的值，包括数组、字符串、数字、布尔值等。
+你可以根据实际情况灵活运用，将数组和对象结合使用来存储和管理数据。
+例如这样的变量：
+{{{
+  <<set $testvar to {
+    name: "测试变量",
+    value: 123,
+    tags: ["tag1", "tag2"],
+    nestedObject: {
+      key1: "value1",
+      key2: "value2"
+    }
+  }>>
+}}}
+当你需要访问它的name属性时，可以使用{{{$testvar.name}}}，访问value属性时可以使用{{{$testvar.value}}}，访问tags数组的第一个元素时可以使用{{{$testvar.tags[0]}}}，访问nestedObject对象的key1属性时可以使用{{{$testvar.nestedObject.key1}}}。
+
+:: StoryScript [script]
+
+
+:: StoryStylesheet [stylesheet]
+#chapter9-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#chapter9-left {
+  width: 20%;
+  padding: 10px;
+}
+#chapter9-right {
+  width: 80%;
+  padding: 10px;
+}
+
+div#passage-chapter3 img {
+  width: 100px;
+}
