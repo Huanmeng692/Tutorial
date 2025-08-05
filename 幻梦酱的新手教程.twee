@@ -42,6 +42,8 @@
 - [[第九章：特殊段落和标签|Chapter9]]
 - [[第十章：数组和对象|Chapter10]]
 - [[第十一章：层叠样式表（选择器部分）|Chapter11]]
+- [[第十二章：层叠样式表（属性部分）|Chapter12]]
+- [[第十三章：JavaScript（简要介绍）|Chapter13]]
 
 
 :: StoryInit
@@ -498,22 +500,155 @@ CSS选择器是用来选取页面元素的规则，它可以是元素的标签�
 ----
 在应用CSS样式时，有时会遇到特异性（Specificity）的问题。
 特异性是指当多个选择器匹配同一个元素时，浏览器会根据特异性来决定哪个样式优先应用，当多个选择器拥有某个相同属性时，特异性值更高的会被应用。
-特异性值是一个三元组，表示ID选择器、类选择器和元素选择器的数量。
-特异性值的计算规则如下：
-- ID：选择器中包含 ID 选择器则百位得一分。
-- 类：选择器中包含类选择器、属性选择器或者伪类则十位得一分。
-- 元素：选择器中包含元素、伪元素选择器则个位得一分。
+特异性是一个三元组，表示ID选择器、类选择器和元素选择器的数量。
+特异性分值的计算规则如下：
+- ID：选择器中包含 ID 选择器，则百位得一分。
+- 类：选择器中包含类选择器、属性选择器或者伪类，则十位得一分。
+- 元素：选择器中包含元素、伪元素选择器，则个位得一分。
 - 通用选择器（*）、组合符（+、>、~、' '）和调整优先级的选择器（:where()）不会影响优先级。
 最终按照选择器的特异性值总和计算优先级。
+//PS：内联样式的特异性分值为1000，也就是ID选择器的十倍，而在属性值后面写{{{!important}}}更是会无视特异性值保证绝对优先生效，但这两种方法都不利于样式管理，因此除非迫不得已，最好不建议使用这两种方式。//
 
 例如，选择器{{{#id .class p}}}的特异性为(1,1,1)，表示有1个ID选择器、1个类选择器和1个元素选择器，它的特异性值为111。
 而选择器{{{.class p}}}的特异性为(0,1,1)，表示有0个ID选择器、1个类选择器和1个元素选择器，它的特异性值为011。
-如果你想要计算一个CSS选择器的特异性值，可以使用下面的工具：
+如果你想要计算一个CSS选择器的特异性，可以使用下面的工具：
 
 <label for="selectorInput">输入 CSS 选择器：</label>
 <input id="selectorInput" type="text" />
 <button id="checkSpecificity">确定</button>
 <div id="specificityResult"></div>
+
+[[下一章|Chapter12]]
+
+
+:: Chapter12
+上一章我们介绍了层叠样式表的选择器部分，这一章我们介绍层叠样式表的属性部分。
+由于HTML元素类型非常多，每种元素可用的属性也非常多，本章篇幅有限就不一一介绍了。
+若对相关内容感兴趣（包括上一章提到的CSS选择器部分），并且想深入学习层叠样式表相关知识，可以在<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">这里</a>进行学习。
+此处，仅对CSS属性的基本概念进行简单介绍。
+
+上一章我们介绍了层叠样式表的选择器部分，但一个完整的CSS代码语句不仅仅只有选择器，还有同样^^也许更加^^重要的属性部分。
+就比如以下这个CSS代码：
+{{{
+span {
+  border: 1px solid black;
+  background-color: lime;
+}
+}}}
+可以看到，它的第一行内容，是上一章学过的选择器，它会选中页面中所有{{{<span>}}}元素。
+在选择器后面，有一个{{{“{”}}}符号，它意味着从这里直到下一个{{{“}”}}}符号为止，中间的内容全部视为{{{span}}}这个选择器的属性。
+而在{{{“{}”}}}中间的两行的属性部分，也有相应的格式，{{{[属性名]:[属性值];}}}（注意是英文的冒号和分号）。
+每个CSS代码语句内的属性语句数量不限，如果其中一条属性有错误，也不会影响到其他正确的属性的生效，同一个CSS语句中可以有相同的属性，如果出现相同的属性，最下方的会优先生效。
+
+[[下一章|Chapter13]]
+
+
+:: Chapter13
+既然已经介绍了CSS（层叠样式表），又怎么能不介绍它的兄弟JS（JavaScript）呢？
+然而，JavaScript的内容相比CSS就更加复杂了，仅仅通过一章内容就能从零开始教会你使用它，实在是不现实==，更何况我自己对JavaScript的了解也不算太多==。
+如果你想要深入学习JavaScript，可以在<a href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/What_is_JavaScript">这里</a>进行学习。
+在Twine中，有专门存放JavaScript的片段，你可以点击“故事-JavaScript”按钮来打开它，并将你游戏中所用到的JavaScript代码全部放进去。
+
+还记得上上一章那个计算CSS选择器特异性的小工具吗，那就是用JavaScript制作的，而它的代码如下所示：
+{{{
+/**
+ * 这个脚本用于统计CSS选择器的特异性（优先级）。
+ * 用户可以输入一个CSS选择器，点击确定后会显示该选择器的特异性值。
+ * 特异性值的计算规则如下：
+ * - ID选择器特异性为100
+ * - 类选择器、属性选择器和伪类选择器特异性为10
+ * - 元素选择器和伪元素选择器特异性为1
+ * - 通配符选择器（*）特异性为0
+ */
+// 用户点击按钮时触发
+$(document).on('click', '#checkSpecificity', function () {
+	const selector = $('#selectorInput').val();
+	try {
+		const specificity = getSpecificity(selector);
+		$('#specificityResult').text('优先级为：(' + specificity.join(', ') + ')');
+	} catch (e) {
+		$('#specificityResult').text('无效的选择器：' + e.message);
+	}
+});
+// 主函数：计算选择器优先级
+function getSpecificity(selector) {
+	let idCount = 0;
+	let classAttrPseudoClassCount = 0;
+	let elementPseudoElementCount = 0;
+	// 替换 split(',')，防止 :is(.a, span) 被错误拆分
+	const selectors = splitSelectors(selector);
+	for (const sel of selectors) {
+		const s = sel.trim();
+		// Step 1: 提取伪类函数并计算参数优先级
+		const pseudoFunctionRegex = /:(not|is|has|where)\(([^()]+(?:\([^()]*\)[^()]*)*)\)/g;
+		let match;
+		while ((match = pseudoFunctionRegex.exec(s)) !== null) {
+			const name = match[1];
+			const args = match[2];
+			if (name === 'where') continue; // :where() 不计优先级
+			const argSelectors = splitSelectors(args); // ← 修正这也用 splitSelectors
+			let maxSpec = [0, 0, 0];
+			for (const arg of argSelectors) {
+				const subSpec = getSpecificity(arg.trim());
+				maxSpec = compareSpecificity(maxSpec, subSpec);
+			}
+			idCount += maxSpec[0];
+			classAttrPseudoClassCount += maxSpec[1];
+			elementPseudoElementCount += maxSpec[2];
+		}
+		// Step 2: 清除伪类函数部分，避免重复计数
+		let sCleaned = s.replace(/:(not|is|has|where)\(([^()]+(?:\([^()]*\)[^()]*)*)\)/g, '');
+		// ID 选择器
+		idCount += (sCleaned.match(/#[\w-]+/g) || []).length;
+		// 类选择器
+		const classMatches = sCleaned.match(/\.[\w-]+/g) || [];
+		// 属性选择器
+		const attrMatches = sCleaned.match(/\[[^\]]+\]/g) || [];
+
+		// 普通伪类（不含伪元素和函数伪类）
+		const pseudoClassMatches = (sCleaned.match(/(?<!:):[\w-]+(\([^)]+\))?/g) || [])
+			.filter(p => !/^:(not|is|has|where)\(/.test(p));
+		classAttrPseudoClassCount += classMatches.length + attrMatches.length + pseudoClassMatches.length;
+		// 元素选择器（如 div, p）
+		const elementMatches = sCleaned.match(/(^|[\s>+~])\s*[a-zA-Z][\w-]*/g) || [];
+		// 伪元素（如 ::after）
+		const pseudoElementMatches = sCleaned.match(/::[\w-]+/g) || [];
+		elementPseudoElementCount += elementMatches.length + pseudoElementMatches.length;
+	}
+	return [idCount, classAttrPseudoClassCount, elementPseudoElementCount];
+}
+// 比较两个 specificity 三元组，返回优先级更高的一个
+function compareSpecificity(a, b) {
+	for (let i = 0; i < 3; i++) {
+		if (a[i] > b[i]) return a;
+		if (a[i] < b[i]) return b;
+	}
+	return a;
+}
+// 安全拆分选择器，避免拆到伪类参数内的逗号
+function splitSelectors(selectorString) {
+	const result = [];
+	let current = '';
+	let depth = 0;
+	for (let i = 0; i < selectorString.length; i++) {
+		const char = selectorString[i];
+		if (char === '(') {
+			depth++;
+		} else if (char === ')') {
+			if (depth > 0) depth--;
+		} else if (char === ',' && depth === 0) {
+			result.push(current.trim());
+			current = '';
+			continue;
+		}
+		current += char;
+	}
+	if (current.trim() !== '') {
+		result.push(current.trim());
+	}
+	return result;
+}
+}}}
 
 
 :: StoryScript [script]
@@ -521,7 +656,6 @@ CSS选择器是用来选取页面元素的规则，它可以是元素的标签�
  * 这个脚本用于统计CSS选择器的特异性（优先级）。
  * 用户可以输入一个CSS选择器，点击确定后会显示该选择器的特异性值。
  * 特异性值的计算规则如下：
- * - 内联样式（style属性）特异性为1000
  * - ID选择器特异性为100
  * - 类选择器、属性选择器和伪类选择器特异性为10
  * - 元素选择器和伪元素选择器特异性为1

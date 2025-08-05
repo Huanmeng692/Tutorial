@@ -20,4 +20,6 @@ Chapter 8：捕获宏
 ### 进阶部分
 Chapter 9：特殊段落和标签\
 Chapter 10：数组和对象\
-Chapter 11：层叠样式表（选择器部分）
+Chapter 11：层叠样式表（选择器部分）\
+Chapter 12：层叠样式表（属性部分）\
+Chapter 13：JavaScript（简要介绍）
