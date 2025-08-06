@@ -104,17 +104,18 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="幻梦酱的新手教程" startnode="7" creator="TweeRS" creator-version="0.1.10" ifid="01155382-7ADE-430A-A9E6-57E047E37F27" zoom="1" format="SugarCube" format-version="2.37.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#chapter9-body {
+	<tw-storydata name="幻梦酱的新手教程" startnode="7" creator="TweeRS" creator-version="0.1.10" ifid="01155382-7ADE-430A-A9E6-57E047E37F27" zoom="1" format="SugarCube" format-version="2.37.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#Chapter10-body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 }
-#chapter9-left {
+#Chapter10-left {
   width: 20%;
+  min-width: 130px;
   padding: 10px;
 }
-#chapter9-right {
+#Chapter10-right {
   width: 80%;
   padding: 10px;
 }
@@ -245,99 +246,87 @@ function splitSelectors(selectorString) {
 - [[第一章：片段|Chapter1]]
 - [[第二章：链接|Chapter2]]
 - [[第三章：多媒体内容|Chapter3]]
-- [[第四章：变量|Chapter4]]
-- [[第五章：链接宏和更新宏|Chapter5]]
-- [[第六章：条件宏|Chapter6]]
-- [[第七章：循环宏|Chapter7]]
-- [[第八章：捕获宏|Chapter8]]
+- [[第四章：相对路径|Chapter4]]
+- [[第五章：变量|Chapter5]]
+- [[第六章：链接宏和更新宏|Chapter6]]
+- [[第七章：条件宏|Chapter7]]
+- [[第八章：循环宏|Chapter8]]
+- [[第九章：捕获宏|Chapter9]]
 ----
-- [[第九章：特殊段落和标签|Chapter9]]
-- [[第十章：数组和对象|Chapter10]]
-- [[第十一章：层叠样式表（选择器部分）|Chapter11]]
-- [[第十二章：层叠样式表（属性部分）|Chapter12]]
-- [[第十三章：JavaScript（简要介绍）|Chapter13]]</tw-passagedata><tw-passagedata pid="6" name="StoryInit" tags="" position="" size="">&lt;&lt;set $SpecialNameText to [
-  &quot;这个片段的内容会在每个故事片段完成显示后执行一次，适用于需要在每个片段显示后执行的代码，比如重新设置变量、重新设置片段内容的样式等，由于此时片段内变量内容已完成渲染，直接修改相关变量并不会更新片段内相应内容的显示。&quot;,
-  &quot;这个片段的内容会附加到每个故事片段的顶部，适用于需要在每个片段顶部显示的内容，比如导航链接、章节标题等。&quot;,
-  &quot;这个片段的内容会在每个故事片段开始渲染前执行一次，适用于需要在每个片段开始渲染前执行的代码，比如初始化变量、设置片段内容的样式等，由于此时片段内容还没有开始渲染，因此修改相关变量会更新片段内相应内容的显示。&quot;,
-  &quot;这个片段用于填充界面栏中的作者署名区域，在故事标题下方，元素的ID为story-author&quot;,
-  &quot;这个片段用于填充界面栏中的故事横幅区域，在故事标题上方，元素的ID为story-banner&quot;,
-  &quot;这个片段用于填充界面栏中的故事标题区域，它就是故事标题，元素的ID为story-caption&quot;,
-  &quot;这个片段用于设置浏览器的标题栏和UI栏中的显示标题，元素的ID为story-title，如果省略，会默认使用故事标题作为显示标题。&quot;,
-  &quot;这个片段的内容会在故事开始前执行一次，之后不会再次运行，适用于需要在故事开始前执行的代码，比如初始化变量。&quot;,
-  &quot;这个片段用于填充界面栏中的菜单区域，元素的ID为story-menu，这个部分虽然会显示内容，但仅显示按钮和链接等内容，不能显示文本内容。&quot;,
-  &quot;这个片段用于填充界面栏中的故事副标题区域，在故事标题下方，元素的ID为story-subtitle&quot;,
-  &quot;这个标签用于将段落注册为小组件片段，它会在游戏启动时进行加载（时机早于StoryInit片段），注册为小组件片段后，与其他特殊片段一样，不能在故事中通过链接进行访问，但可以在其他片段中使用{{{&lt;&lt;widget&gt;&gt;}}}宏来调用。&quot;,
-  &quot;这个标签会在段落渲染之前删除前导/尾随换行符，并将所有剩余的换行符序列替换为单个空格，相当于将整个段轮廓包裹在{{{&lt;&lt;nobr&gt;&gt;}}}宏内。&quot;
-]&gt;&gt;
-&lt;&lt;set $SpecialName to {
+- [[第十章：特殊段落和标签|Chapter10]]
+- [[第十一章：widget宏和include宏|Chapter11]]
+- [[第十二章：数组和对象|Chapter12]]
+- [[第十三章：层叠样式表（选择器部分）|Chapter13]]
+- [[第十四章：层叠样式表（属性部分）|Chapter14]]
+- [[第十五章：JavaScript（简要介绍）|Chapter15]]</tw-passagedata><tw-passagedata pid="6" name="StoryInit" tags="" position="" size="">&lt;&lt;set $SpecialName to {
   PassageDone:{
     class:&quot;故事片段渲染后&quot;,
-    text:0,
+    text:&quot;这个片段的内容会在每个故事片段完成显示后执行一次，适用于需要在每个片段显示后执行的代码，比如重新设置变量、重新设置片段内容的样式等，由于此时片段内变量内容已完成渲染，直接修改相关变量并不会更新片段内相应内容的显示。&quot;,
     output:false
   },
   PassageHeader:{
     class:&quot;故事片段渲染时&quot;,
-    text:1,
+    text:&quot;这个片段的内容会附加到每个故事片段的顶部，适用于需要在每个片段顶部显示的内容，比如导航链接、章节标题等。&quot;,
     output:true
   },
   PassageReady:{
     class:&quot;故事片段渲染前&quot;,
-    text:2,
+    text:&quot;这个片段的内容会在每个故事片段开始渲染前执行一次，适用于需要在每个片段开始渲染前执行的代码，比如初始化变量、设置片段内容的样式等，由于此时片段内容还没有开始渲染，因此修改相关变量会更新片段内相应内容的显示。&quot;,
     output:false
   },
   StoryAuthor:{
     class:&quot;故事开始时&quot;,
-    text:3,
+    text:&quot;这个片段用于填充界面栏中的作者署名区域，在故事标题下方，元素的ID为story-author&quot;,
     output:true
   },
   StoryBanner:{
     class:&quot;故事开始时&quot;,
-    text:4,
+    text:&quot;这个片段用于填充界面栏中的故事横幅区域，在故事标题上方，元素的ID为story-banner&quot;,
     output:true
   },
   StoryCaption:{
     class:&quot;故事开始时&quot;,
-    text:5,
+    text:&quot;这个片段用于填充界面栏中的故事标题区域，它就是故事标题，元素的ID为story-caption&quot;,
     output:true
   },
   StoryDisplayTitle:{
     class:&quot;故事开始时&quot;,
-    text:6,
+    text:&quot;这个片段用于设置浏览器的标题栏和UI栏中的显示标题，元素的ID为story-title，如果省略，会默认使用故事标题作为显示标题。&quot;,
     output:true
   },
   StoryInit:{
     class:&quot;故事开始前&quot;,
-    text:7,
+    text:&quot;这个片段的内容会在故事开始前执行一次，之后不会再次运行，适用于需要在故事开始前执行的代码，比如初始化变量。&quot;,
     output:false
   },
   StoryMenu:{
     class:&quot;故事开始时&quot;,
-    text:8,
+    text:&quot;这个片段用于填充界面栏中的菜单区域，元素的ID为story-menu，这个部分虽然会显示内容，但仅显示按钮和链接等内容，不能显示文本内容。&quot;,
     output:true
   },
   StorySubtitle:{
     class:&quot;故事开始时&quot;,
-    text:9,
+    text:&quot;这个片段用于填充界面栏中的故事副标题区域，在故事标题下方，元素的ID为story-subtitle&quot;,
     output:true
   },
   widget:{
     class:&quot;故事片段渲染时&quot;,
-    text:10,
+    text:&quot;这个标签用于将段落注册为小组件片段，它会在游戏启动时进行加载（时机早于StoryInit片段），注册为小组件片段后，与其他特殊片段一样，不能在故事中通过链接进行访问，但可以在其他片段中使用{{{&lt;&lt;widget&gt;&gt;}}}宏来调用。&quot;,
     output:true
   },
   nobr:{
     class:&quot;故事片段渲染时&quot;,
-    text:11,
+    text:&quot;这个标签会在段落渲染之前删除前导/尾随换行符，并将所有剩余的换行符序列替换为单个空格，相当于将整个段轮廓包裹在{{{&lt;&lt;nobr&gt;&gt;}}}宏内。&quot;,
     output:true
   }
 }&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="400,300" size="100,100">恭喜你，当你看到这一行文字，意味着你的电脑浏览器可以正常使用，拥有了调试的环境，正所谓好的开始是成功的一半，这说明了你已经取得了一半的胜利。
 
 但是，不要骄傲，接下来还有很多东西需要你去学习。
 
-首先，你需要确定你已经安装了最新版本的Twine软件，并且已经安装了SugarCube格式的故事格式。
+首先，你需要确定你已经安装了最新版本的Twine软件，并且已经安装了C格式的故事格式。
 
 如果你还没有安装Twine软件，可以访问&lt;a href=&quot;https://twinery.org/&quot; target=&quot;_blank&quot;&gt;Twine官网&lt;/a&gt;下载最新版本。
-如果你不确定使用的是否为SugarCube格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“SugarCube 2.37.3”，并点击“设为默认故事格式”。
+如果你不确定使用的是否为C格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“C 2.37.3”，并点击“设为默认故事格式”。
 
 在确认上述步骤已经完成后，你可以点击下面的链接，进入基础部分内容的学习。
 若你已经熟悉了基础部分的内容，可以直接跳转到进阶部分的学习。
@@ -377,7 +366,27 @@ Twine没有图像宏，但有更加简便的插入图像方式：{{{[img[image.j
 如果你希望插入的图片在点击时可以跳转到其他片段，可以使用{{{[img[image.jpg|链接文本]]}}}的方式。
 例如，{{{[img[image.jpg][新页面]]}}}
 
-[[下一章|Chapter4]]</tw-passagedata><tw-passagedata pid="12" name="Chapter4" tags="" position="" size="">在Twine中，你可以使用变量来存储和管理数据。
+[[下一章|Chapter4]]</tw-passagedata><tw-passagedata pid="12" name="Chapter4" tags="" position="" size="">在Twine中，插入媒体内容需要写出文件所在的路径，通常我们使用的是相对路径。
+相对路径的写法很简单，以你游戏的HTML文件所在位置为基准，逐级写出文件夹和文件名即可。
+若是当前目录，用{{{.\}}}表示。
+若是上级目录，用{{{..\}}}表示。
+若是根目录，则用{{{\}}}表示。
+&gt;game
+&gt;&gt;HTML
+&gt;&gt;&gt;你的游戏.html
+&gt;&gt;&gt;img
+&gt;&gt;&gt;&gt;img1.png
+&gt;&gt;&gt;&gt;img2.png
+&gt;&gt;src
+&gt;&gt;&gt;button.js
+&gt;&gt;&gt;link.js
+例如这样的文件结构，你的游戏位于game文件夹下HTML子文件夹，名为{{{你的游戏.html}}}
+如果你想引用当前所在文件夹下img文件夹里的文件img.png，你可以写成{{{.\img\img1.png}}}
+其中{{{.\}}}代表&#39;&#39;当前文件夹&#39;&#39;，{{{img\}}}代表&#39;&#39;img文件夹&#39;&#39;，{{{img.png}}}代表&#39;&#39;img1.png&#39;&#39;文件。
+如果你想引用和你游戏所在文件夹同级的src文件夹下的文件button.js，你可以写成{{{..\src\button.js}}}
+其中{{{..\}}}代表&#39;&#39;上一级文件夹&#39;&#39;，{{{src\}}}代表&#39;&#39;src文件夹&#39;&#39;，{{{button.js}}}代表&#39;&#39;button.js&#39;&#39;
+
+[[下一章|Chapter5]]</tw-passagedata><tw-passagedata pid="13" name="Chapter5" tags="" position="" size="">在Twine中，你可以使用变量来存储和管理数据。
 变量可以用来存储用户的选择、游戏状态等信息，以便在不同的片段之间进行传递和使用。
 
 你可以使用{{{&lt;&lt;set&gt;&gt;}}}宏来创建和设置变量，例如{{{&lt;&lt;set $variableName to &quot;value&quot;&gt;&gt;}}}。
@@ -400,18 +409,19 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 将{{{$variableName}}}变量设置为：（&lt;&lt;nobr&gt;&gt;&lt;&lt;set $variableName to &quot;新页面A&quot;&gt;&gt;
 &lt;&lt;link &quot;新页面A&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;新页面A&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; /
 &lt;&lt;link &quot;新页面B&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;新页面B&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; /
-&lt;&lt;link &quot;下一章&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;Chapter5&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; 
+&lt;&lt;link &quot;下一章&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;Chapter6&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; 
 &lt;&lt;/nobr&gt;&gt;)
 观察下面的跳转链接的变化，你可以点击它看看会进入什么页面：
-&lt;&lt;do&gt;&gt;[[$variableName]]&lt;&lt;/do&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="新页面A" tags="" position="" size="">这个片段的标题是新页面A
 
-[[返回上一页|Chapter4]]</tw-passagedata><tw-passagedata pid="14" name="新页面B" tags="" position="" size="">这个片段的标题是新页面B
+&lt;&lt;do&gt;&gt;[[$variableName]]&lt;&lt;/do&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="新页面A" tags="" position="" size="">这个片段的标题是新页面A
 
-[[返回上一页|Chapter4]]</tw-passagedata><tw-passagedata pid="15" name="新页面C" tags="" position="" size="">这个片段的标题是新页面C
+[[返回上一页|Chapter5]]</tw-passagedata><tw-passagedata pid="15" name="新页面B" tags="" position="" size="">这个片段的标题是新页面B
 
-[[返回上一页|Chapter5]]</tw-passagedata><tw-passagedata pid="16" name="新页面D" tags="" position="" size="">这个片段的标题是新页面D
+[[返回上一页|Chapter5]]</tw-passagedata><tw-passagedata pid="16" name="新页面C" tags="" position="" size="">这个片段的标题是新页面C
 
-[[返回上一页|Chapter5]]</tw-passagedata><tw-passagedata pid="17" name="Chapter5" tags="" position="" size="">你是否发现，上一章出现了点击后不会跳转到新片段的情况？
+[[返回上一页|Chapter6]]</tw-passagedata><tw-passagedata pid="17" name="新页面D" tags="" position="" size="">这个片段的标题是新页面D
+
+[[返回上一页|Chapter6]]</tw-passagedata><tw-passagedata pid="18" name="Chapter6" tags="" position="" size="">你是否发现，上一章出现了点击后不会跳转到新片段的情况？
 这是因为使用了不同于{{{[[新页面]]}}}的另一种链接方式：{{{&lt;&lt;link &quot;链接文本&quot;&gt;&gt;链接内容&lt;&lt;/link&gt;}}}。
 在{{{&lt;&lt;link&gt;&gt;}}}宏中，除了可以设置和{{{[[新页面]]}}}一样的跳转链接外，还可以在链接中添加其他内容，例如设置变量、执行代码等。
 例如{{{&lt;&lt;link &quot;新页面A&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;新页面A&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt;}}}，它的作用不是跳转到新页面A，而是设置变量{{{$variableName}}}的值为“新页面A”。
@@ -430,7 +440,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 将$variableName变量设置为：（&lt;&lt;nobr&gt;&gt;&lt;&lt;set $variableName to &quot;新页面A&quot;&gt;&gt;
 &lt;&lt;link &quot;新页面A&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;新页面A&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; /
 &lt;&lt;link &quot;新页面B&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;新页面B&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; /
-&lt;&lt;link &quot;下一章&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;Chapter5&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; 
+&lt;&lt;link &quot;下一章&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;Chapter6&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt; 
 &lt;&lt;/nobr&gt;&gt;)
 观察下面的跳转链接的变化，你可以点击它看看会进入什么页面：
 &lt;&lt;do&gt;&gt;[[$variableName]]&lt;&lt;/do&gt;&gt;
@@ -451,7 +461,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 如果没有使用{{{&lt;&lt;do&gt;&gt;}}}宏和{{{&lt;&lt;redo&gt;&gt;}}}宏，Twine就不会重新渲染片段内容，因此即使修改了变量的值，当前片段内使用变量的部分也不会更新，这在使用{{{&lt;&lt;link&gt;&gt;}}}宏时尤其明显。
 所以，如果你想要在当前片段中修改已显示的变量的值并实时更新，必须使用{{{&lt;&lt;do&gt;&gt;}}}宏来包裹住变量的值，并在触发的链接中加入{{{&lt;&lt;redo&gt;&gt;}}}。
 
-[[下一章|Chapter6]]</tw-passagedata><tw-passagedata pid="18" name="Chapter6" tags="" position="" size="">变量除了用在链接中之外，还可以用在其他地方，比如根据变量的值进行判断，显示不同的内容。
+[[下一章|Chapter7]]</tw-passagedata><tw-passagedata pid="19" name="Chapter7" tags="" position="" size="">变量除了用在链接中之外，还可以用在其他地方，比如根据变量的值进行判断，显示不同的内容。
 这就要用到条件宏了。
 在Twine中，条件宏分为两种，第一种为{{{&lt;&lt;if&gt;&gt;}}}宏，第二种为{{{&lt;&lt;switch&gt;&gt;}}}宏。
 {{{&lt;&lt;if&gt;&gt;}}}宏用于根据条件判断来执行不同的代码块，而{{{&lt;&lt;switch&gt;&gt;}}}宏则用于根据变量的值来选择执行不同的代码块。
@@ -482,7 +492,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 {{{=}}}是赋值运算符，而不是比较运算符，所以在条件语句中不能使用{{{=}}}。
 同样，在同一个片段内的变量发生变化时，想要同步更新条件判断的结果，也需要使用{{{&lt;&lt;do&gt;&gt;}}}宏来包裹住条件判断的代码块，并在触发的链接中加入{{{&lt;&lt;redo&gt;&gt;}}}。
 
-[[下一章|Chapter7]]</tw-passagedata><tw-passagedata pid="19" name="Chapter7" tags="" position="" size="">除了{{{&lt;&lt;if&gt;&gt;}}}和{{{&lt;&lt;switch&gt;&gt;}}}之外，Twine还提供了另一种条件宏，也就是{{{&lt;&lt;for&gt;&gt;}}}宏。
+[[下一章|Chapter8]]</tw-passagedata><tw-passagedata pid="20" name="Chapter8" tags="" position="" size="">除了{{{&lt;&lt;if&gt;&gt;}}}和{{{&lt;&lt;switch&gt;&gt;}}}之外，Twine还提供了另一种条件宏，也就是{{{&lt;&lt;for&gt;&gt;}}}宏。
 {{{&lt;&lt;for&gt;&gt;}}}宏的用途是重复多次执行其包含的内容，直到满足某个条件为止。
 {{{&lt;&lt;for&gt;&gt;}}}宏有三种形式：
 {{{
@@ -513,7 +523,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 }}}
 在{{{&lt;&lt;for&gt;&gt;}}}宏中，可以使用{{{&lt;&lt;break&gt;&gt;}}}宏来提前结束循环，使用{{{&lt;&lt;continue&gt;&gt;}}}宏来跳过当前循环的剩余部分并开始下一次循环。
 
-[[下一章|Chapter8]]</tw-passagedata><tw-passagedata pid="20" name="Chapter8" tags="" position="" size="">上一章所介绍的{{{&lt;&lt;for&gt;&gt;}}}宏是Twine中最常用的循环宏之一，它可以用于显示数组元素、执行重复操作等。
+[[下一章|Chapter9]]</tw-passagedata><tw-passagedata pid="21" name="Chapter9" tags="" position="" size="">上一章所介绍的{{{&lt;&lt;for&gt;&gt;}}}宏是Twine中最常用的循环宏之一，它可以用于显示数组元素、执行重复操作等。
 然而，若要在循环完成后使用循环中的变量，可能会遇到一些问题。
 其中一个问题是，循环结束后，循环变量的值可能不是你期望的结果。
 例如上一章的这个循环语句，如果想要用数组元素的值作为链接跳转的片段名：
@@ -540,12 +550,11 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 }}}
 这样，每次循环时，{{{_value}}}的值都会被捕获并创建相应的本地化版本，点击链接时就会跳转到对应的片段，而不是最后一个元素的值所代表的片段。
 
-
-[[进入进阶章节|Chapter9]]</tw-passagedata><tw-passagedata pid="21" name="Chapter9" tags="nobr" position="" size="">在Twine中，除了基本的片段和链接外，还有一些特殊的片段和标签。
+[[进入进阶章节|Chapter10]]</tw-passagedata><tw-passagedata pid="22" name="Chapter10" tags="nobr" position="" size="">在Twine中，除了基本的片段和链接外，还有一些特殊的片段和标签。
 其中特殊片段是Twine内置有着特殊作用的片段，它们有着各自的功能，不应该在故事中通过链接进行访问。
 以下是Twine内置的特殊片段和标签，你可以点击这些链接查看其具体功能：&lt;&lt;set _name to $SpecialName.PassageReady&gt;&gt;
-&lt;div id=&quot;chapter9-body&quot;&gt;
-&lt;div id=&quot;chapter9-left&quot;&gt;
+&lt;div id=&quot;Chapter10-body&quot;&gt;
+&lt;div id=&quot;Chapter10-left&quot;&gt;
 &lt;br&gt;Passage片段&lt;br&gt;&lt;br&gt;
 &lt;&lt;link &quot;PassageReady&quot;&gt;&gt;&lt;&lt;set _name to $SpecialName.PassageReady&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;br&gt;
 &lt;&lt;link &quot;PassageHeader&quot;&gt;&gt;&lt;&lt;set _name to $SpecialName.PassageHeader&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;br&gt;
@@ -562,14 +571,36 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 &lt;&lt;link &quot;widget&quot;&gt;&gt;&lt;&lt;set _name to $SpecialName.widget&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;br&gt;
 &lt;&lt;link &quot;nobr&quot;&gt;&gt;&lt;&lt;set _name to $SpecialName.nobr&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;br&gt;
 &lt;/div&gt;
-&lt;div id=&quot;chapter9-right&quot;&gt;&lt;&lt;do&gt;&gt;
-&lt;div id=&quot;chapter9-right-class&quot;&gt;运行或渲染时机：_name.class&lt;/div&gt;
-&lt;div id=&quot;chapter9-right-output&quot;&gt;是否会显示内容：&lt;&lt;= _name.output ? &quot;是&quot; : &quot;否&quot; &gt;&gt;&lt;/div&gt;
-&lt;div id=&quot;chapter9-right-text&quot;&gt;&lt;&lt;= $SpecialNameText[_name.text]&gt;&gt;&lt;/div&gt;
+&lt;div id=&quot;Chapter10-right&quot;&gt;&lt;&lt;do&gt;&gt;
+&lt;div id=&quot;Chapter10-right-class&quot;&gt;运行或渲染时机：_name.class&lt;/div&gt;
+&lt;div id=&quot;Chapter10-right-output&quot;&gt;是否会显示内容：&lt;&lt;= _name.output ? &quot;是&quot; : &quot;否&quot; &gt;&gt;&lt;/div&gt;
+&lt;div id=&quot;Chapter10-right-text&quot;&gt;&lt;&lt;= _name.text&gt;&gt;&lt;/div&gt;
 &lt;&lt;/do&gt;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-[[下一章|Chapter10]]</tw-passagedata><tw-passagedata pid="22" name="Chapter10" tags="" position="" size="">在Twine中，数组和对象是两种常用的数据结构。
+[[下一章|Chapter11]]</tw-passagedata><tw-passagedata pid="23" name="Chapter11" tags="" position="" size="">在我们进行游戏创作的过程中，经常会遇到某段代码或内容需要在多个场景中使用的情况。
+如果在每个场景内都将相同的内容写一遍的话，所需的时间成本过高，而且一旦需要修改这些内容，更是相当麻烦。
+为了避免这种情况发生，我们可以使用以下两个内置宏
+{{{&lt;&lt;widget&gt;&gt;}}}宏和{{{&lt;&lt;include&gt;&gt;}}}宏。
+
+{{{&lt;&lt;widget&gt;&gt;}}}宏用于定义代码小组件，它的语法如下：
+{{{&lt;&lt;widget widgetName [container]&gt;&gt; … &lt;&lt;/widget&gt;&gt;}}}
+
+其中{{{widgetName}}}为字符串，也就是你给这个小组件取的名字。
+而{{{container}}}为可选关键字，若包含该关键字，表示这个小组件是否为容器小组件，也就是需要结束标签，若不包含则为单标签。
+{{{&lt;&lt;widget&gt;&gt;}}}宏的内容即为你想要复用的代码的内容。
+
+需要注意，定义小组件需要在非故事片段中，并给这个片段加上标签{{{widget}}}(注意是标签而不是片段名)。
+一个带{{{widget}}}标签的片段可以存放一个或多个小组件定义，但不建议将所有小组件都放在一个{{{widget}}}标签片段中。
+完成小组件定义后，在其他片段中就可以使用{{{&lt;&lt;组件名&gt;&gt;}}}或{{{&lt;&lt;组件名&gt;&gt;…&lt;&lt;/组件名&gt;&gt;}}}（取决于是否有{{{container}}}关键字）的方式调用小组件内容。
+
+相比之下，{{{&lt;&lt;include&gt;&gt;}}}宏的使用方式就简单一些了。
+{{{&lt;&lt;include&gt;&gt;}}}宏用于在当前片段显示其他片段的内容，因此无需提前定义。
+只需要在任意片段使用{{{&lt;&lt;include passageName [elementName]&gt;&gt;}}}即可。
+其中{{{passageName}}}为字符串，也就是你需要显示的目标片段名称。
+而{{{elementName}}}为可选字符串，是包装目标片段内容的HTML元素。
+
+[[下一章|Chapter12]]</tw-passagedata><tw-passagedata pid="24" name="Chapter12" tags="" position="" size="">在Twine中，数组和对象是两种常用的数据结构。
 
 数组是一种有序的数据集合，可以存储多个值，每个值都有一个索引。
 它的结构为：{{{[value1, value2, value3]}}}，其中{{{value1}}}、{{{value2}}}和{{{value3}}}是数组中的元素，它们的索引从0开始依次递增。
@@ -600,7 +631,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 }}}
 当你需要访问它的name属性时，可以使用{{{$testvar.name}}}，访问value属性时可以使用{{{$testvar.value}}}，访问tags数组的第一个元素时可以使用{{{$testvar.tags[0]}}}，访问nestedObject对象的key1属性时可以使用{{{$testvar.nestedObject.key1}}}。
 
-[[下一章|Chapter11]]</tw-passagedata><tw-passagedata pid="23" name="Chapter11" tags="" position="" size="">当我们想要修改页面元素的样式时，可以使用CSS（层叠样式表）。
+[[下一章|Chapter13]]</tw-passagedata><tw-passagedata pid="25" name="Chapter13" tags="" position="" size="">当我们想要修改页面元素的样式时，可以使用CSS（层叠样式表）。
 在Twine中，你可以使用内置的“故事-故事样式表”来修改页面元素的样式。
 
 想要修改特定元素的样式，你需要先确定该元素的CSS选择器。
@@ -659,7 +690,7 @@ CSS选择器是用来选取页面元素的规则，它可以是元素的标签�
 &lt;button id=&quot;checkSpecificity&quot;&gt;确定&lt;/button&gt;
 &lt;div id=&quot;specificityResult&quot;&gt;&lt;/div&gt;
 
-[[下一章|Chapter12]]</tw-passagedata><tw-passagedata pid="24" name="Chapter12" tags="" position="" size="">上一章我们介绍了层叠样式表的选择器部分，这一章我们介绍层叠样式表的属性部分。
+[[下一章|Chapter14]]</tw-passagedata><tw-passagedata pid="26" name="Chapter14" tags="" position="" size="">上一章我们介绍了层叠样式表的选择器部分，这一章我们介绍层叠样式表的属性部分。
 由于HTML元素类型非常多，每种元素可用的属性也非常多，本章篇幅有限就不一一介绍了。
 若对相关内容感兴趣（包括上一章提到的CSS选择器部分），并且想深入学习层叠样式表相关知识，可以在&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/CSS&quot;&gt;这里&lt;/a&gt;进行学习。
 此处，仅对CSS属性的基本概念进行简单介绍。
@@ -677,7 +708,7 @@ span {
 而在{{{“{}”}}}中间的两行的属性部分，也有相应的格式，{{{[属性名]:[属性值];}}}（注意是英文的冒号和分号）。
 每个CSS代码语句内的属性语句数量不限，如果其中一条属性有错误，也不会影响到其他正确的属性的生效，同一个CSS语句中可以有相同的属性，如果出现相同的属性，最下方的会优先生效。
 
-[[下一章|Chapter13]]</tw-passagedata><tw-passagedata pid="25" name="Chapter13" tags="" position="" size="">既然已经介绍了CSS（层叠样式表），又怎么能不介绍它的兄弟JS（JavaScript）呢？
+[[下一章|Chapter15]]</tw-passagedata><tw-passagedata pid="27" name="Chapter15" tags="" position="" size="">既然已经介绍了CSS（层叠样式表），又怎么能不介绍它的兄弟JS（JavaScript）呢？
 然而，JavaScript的内容相比CSS就更加复杂了，仅仅通过一章内容就能从零开始教会你使用它，实在是不现实==，更何况我自己对JavaScript的了解也不算太多==。
 如果你想要深入学习JavaScript，可以在&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Scripting/What_is_JavaScript&quot;&gt;这里&lt;/a&gt;进行学习。
 在Twine中，有专门存放JavaScript的片段，你可以点击“故事-JavaScript”按钮来打开它，并将你游戏中所用到的JavaScript代码全部放进去。
