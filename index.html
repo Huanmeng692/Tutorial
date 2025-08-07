@@ -422,7 +422,7 @@ Twine中变量支持的类型与JavaScript类似，包括字符串、数字、�
 [[返回上一页|Chapter6]]</tw-passagedata><tw-passagedata pid="17" name="新页面D" tags="" position="" size="">这个片段的标题是新页面D
 
 [[返回上一页|Chapter6]]</tw-passagedata><tw-passagedata pid="18" name="Chapter6" tags="" position="" size="">你是否发现，上一章出现了点击后不会跳转到新片段的情况？
-这是因为使用了不同于{{{[[新页面]]}}}的另一种链接方式：{{{&lt;&lt;link &quot;链接文本&quot;&gt;&gt;链接内容&lt;&lt;/link&gt;}}}。
+这是因为使用了不同于{{{[[新页面]]}}}的另一种链接方式：{{{&lt;&lt;link &quot;链接文本&quot;&gt;&gt;链接内容&lt;&lt;/link&gt;&gt;}}}。
 在{{{&lt;&lt;link&gt;&gt;}}}宏中，除了可以设置和{{{[[新页面]]}}}一样的跳转链接外，还可以在链接中添加其他内容，例如设置变量、执行代码等。
 例如{{{&lt;&lt;link &quot;新页面A&quot;&gt;&gt;&lt;&lt;set $variableName to &quot;新页面A&quot;&gt;&gt;&lt;&lt;redo&gt;&gt;&lt;&lt;/link&gt;&gt;}}}，它的作用不是跳转到新页面A，而是设置变量{{{$variableName}}}的值为“新页面A”。
 现在你可以尝试点击下面的链接，看看会发生什么：
