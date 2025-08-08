@@ -17,7 +17,7 @@
 
 
 :: StoryBanner
-[幻梦酱的故事横幅]
+[img[这是一枚可爱的芙芙|img/可爱的芙芙.jpg]]
 
 :: StoryCaption
 [[打开目录|Catalog]]
@@ -46,6 +46,8 @@
 - [[第十三章：层叠样式表（选择器部分）|Chapter13]]
 - [[第十四章：层叠样式表（属性部分）|Chapter14]]
 - [[第十五章：JavaScript（简要介绍）|Chapter15]]
+----
+- [[各种实用小工具|tool]]
 
 
 :: StoryInit
@@ -128,7 +130,9 @@
 
 [[开始基础章节|Chapter1]]
 
-[[进入进阶章节|Chapter9]]
+[[进入进阶章节|Chapter10]]
+
+[[查看实用小工具|tool]]
 
 
 :: Chapter1
@@ -688,6 +692,108 @@ function splitSelectors(selectorString) {
 }
 }}}
 
+[[查看实用小工具|tool]]
+
+
+:: tool
+我会在这里上传一些实用的小工具，大家可以随意使用。
+若显示格式出现问题，推荐使用nobr标签或全局nobr设置。
+我使用的是另一种替代方案：
+{{{
+Config.passages.onProcess = function (p) {
+	return p.text.replace(/[\t\n]+/g, '');
+};
+}}}
+它可以在渲染页面的时候自动去除页面内容中的制表符与换行符（不会影响<br>换行）。
+它的优点是不会像内置nobr功能那样将空白字符替换为单个空格，（就像 这样 一样，在 代码 比较多的 片段中，看起来很 奇怪）。
+缺点是因为不会处理空格符号，你在编写游戏代码的时候，为了提高代码可读性而格式化代码，必须使用制表符。
+
+# [[通用时间系统|time_widget]]
+
+:: time_widget
+StoryInit部分，变量初始化：
+{{{
+<<set $time = {
+	minute:0,
+	hour:8,
+	day:31,
+	weekDay:4,
+	month:8,
+	season:2,
+	year:2018,
+	show:{
+		minute:0,
+		hour:8,
+		weekDay:"周五",
+		season:"秋天"
+	},
+	dayChange:0,
+	daySum:0,
+	seasonRules:["春天","夏天","秋天","冬天"],
+	weekRules:["周一","周二","周三","周四","周五","周六","周日"],
+	monthRules:[31,28,31,30,31,30,31,31,30,31,30,31]
+}>>
+}}}
+----
+widget部分：
+{{{
+<<widget "timeWidget">>
+/* 处理分钟数进位 */
+<<for $time.minute >= 60>>
+	<<set $time.minute -= 60>>
+	<<set $time.hour += 1>>
+/*所有每天特定小时更新的内容放在这里，不过你需要自己写判断小时数的代码*/
+<</for>>
+/* 处理小时数进位以及星期数进位 */
+<<for $time.hour >= 24>>
+	<<set $time.hour -= 24>>
+	<<set $time.day += 1>>
+	<<set $time.daySum += 1>>
+/*所有需要每天凌晨更新的内容都写在这里就行了*/
+	<<set $time.weekDay += 1>>
+<</for>>
+<<if $time.weekDay > 6>>
+	<<set $time.weekDay = $time.weekDay % 7>>
+<</if>>
+/* 处理日期数进位以及年份进位，由于无法直接处理星期数，需要避免直接对$time.day变量的增加操作 */
+<<for $time.day > ($time.monthRules[$time.month - 1] + ($time.month == 2 && ($time.year % 4 == 0 && ($time.year % 100 != 0 || $time.year % 400 == 0)) ? 1 : 0))>>
+	<<set $time.day -= ($time.monthRules[$time.month - 1] + ($time.month == 2 && ($time.year % 4 == 0 && ($time.year % 100 != 0 || $time.year % 400 == 0)) ? 1 : 0))>>
+	<<set $time.month += 1>>
+	<<switch $time.month>>
+		<<case 2 3 4>>
+			<<set time.season = 0>>
+		<<case 5 6 7>>
+			<<set time.season = 1>>
+		<<case 8 9 10>>
+			<<set time.season = 2>>
+		<<case 11 12 1>>
+			<<set time.season = 3>>
+	<</switch>>
+	<<if $time.month > 12>>
+		<<set $time.month = 1>>
+		<<set $time.year += 1>>
+	<</if>>
+<</for>>
+/* 格式化分钟 */
+<<set $time.show.minute = $time.minute>>
+<<if $time.minute < 10>>
+	<<set $time.show.minute = "0" + $time.minute>>
+<</if>>
+<<set $time.show.hour = $time.hour>>
+<<set $time.show.weekDay = $time.weekRules[$time.weekDay]>>
+<<set $time.show.season = $time.seasonRules[$time.season]>>
+<</widget>>
+}}}
+----
+StoryCaption部分（或者其他你想要显示时间的地方）：
+{{{
+<<timeWidget>>今天是：第 $time.year 年 $time.month 月 $time.day 日<br>
+$time.show.weekDay<br>
+现在是$time.show.season<br>
+$time.show.hour : $time.show.minute<br>
+}}}
+----
+
 
 :: StoryScript [script]
 /**
@@ -831,5 +937,9 @@ function splitSelectors(selectorString) {
 
 div#passage-chapter3 img {
   width: 100px;
+}
+
+div#ui-bar-body header#title div#story-banner img {
+	width: 200px;
 }
  
