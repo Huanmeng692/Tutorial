@@ -120,10 +120,10 @@
 
 但是，不要骄傲，接下来还有很多东西需要你去学习。
 
-首先，你需要确定你已经安装了最新版本的Twine软件，并且已经安装了C格式的故事格式。
+首先，你需要确定你已经安装了最新版本的Twine软件，并且已经安装了SugarCube格式的故事格式。
 
 如果你还没有安装Twine软件，可以访问<a href="https://twinery.org/" target="_blank">Twine官网</a>下载最新版本。
-如果你不确定使用的是否为C格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“C 2.37.3”，并点击“设为默认故事格式”。
+如果你不确定使用的是否为SugarCube格式，可以在Twine软件中点击“Twine-故事格式”按钮，然后选择“SugarCube 2.37.3”，并点击“设为默认故事格式”。
 
 在确认上述步骤已经完成后，你可以点击下面的链接，进入基础部分内容的学习。
 若你已经熟悉了基础部分的内容，可以直接跳转到进阶部分的学习。
@@ -709,6 +709,7 @@ Config.passages.onProcess = function (p) {
 缺点是因为不会处理空格符号，你在编写游戏代码的时候，为了提高代码可读性而格式化代码，必须使用制表符。
 
 # [[通用时间系统|time_widget]]
+# [[通用天气系统|weather_widget]]
 
 :: time_widget
 StoryInit部分，变量初始化：
@@ -793,6 +794,60 @@ $time.show.weekDay<br>
 $time.show.hour : $time.show.minute<br>
 }}}
 ----
+
+[[返回|tool]]
+
+
+:: weather_widget
+StoryInit部分：
+{{{
+<<set $weather = {
+	rules:[
+		["晴天","多云","阴天","小雨","中雨","大雨","雷雨"],
+		["晴天","多云","阴天","小雨","中雨","大雨","冰雹"],
+		["晴天","多云","阴天","小雨","中雨","大雨","雷雨"],
+		["晴天","多云","阴天","小雪","中雪","大雪","暴雪"]
+	],
+	today:"晴天",
+	tomorrow:"小雨"
+}>>
+}}}
+----
+widget部分：
+{{{
+<<widget "weather">>//天气变更
+	<<set _weatherKey = null>>
+	<<if [例外条件]>>
+		/* 特殊情况下天气处理方式 */
+	<<else>>
+		<<set _weatherKey = random(0,$weather.rules[$time.season].length)>>
+	<</switch>>
+	<<if $weather.tomorrow != null>>
+		/* 已经通过某种方式确定第二天的天气的情况 */
+		<<set $weather.today = $weather.tomorrow>>
+		<<set $weather.tomorrow = null>>
+	<<else>>
+		/* 直接随机的情况 */
+		<<set $weather.today = $weather.rules[$time.season][_weatherKey]>>
+	<</if>>
+<</widget>>
+<<widget "prediction">>//预测，或者预言第二天的天气
+	<<if _args[0] != null && $weather.rules[$time.season].includes(_args[0])>>
+		<<set $weather.tomorrow = _args[0]>>
+	<<else>>
+		<<set _weatherKey = random(0,6)>>
+		<<set $weather.tomorrow = $weather.rules[$time.season][_weatherKey]>>
+	<</if>>
+<</widget>>
+}}}
+----
+具体使用：
+{{{<<weather>>}}}放在时间系统中你希望变更天气的地方，例如小时进位天数增加的代码中。
+{{{<<prediction>>}}}放在天气预报，或者其他可以预知/确定下一次天气变更情况的地方，不带参数使用为随机确定下一次天气，带参数使用为设定下一次天气
+----
+PS：其中{{{$time}}}开头的变量为上一章中时间系统变量，建议和时间系统搭配使用，若你有其他时间系统代码，可以将相应变量进行修改后使用。
+
+[[返回|tool]]
 
 
 :: StoryScript [script]
